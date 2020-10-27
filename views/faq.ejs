@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kawal Covid-19</title>
+    <link rel="stylesheet" href="/css/slick.css">
+    <link rel="stylesheet" href="/css/slick-theme.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@700&display=swap" rel="stylesheet">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <% include templates/navbar.ejs %>
+
+    <section id="head-faq">
+        <div class="col-12 wrap-faq bg-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 order-lg-12 text-center px-0">
+                        <a href="https://www.freepik.com/stories"><img src="/img/question-left.png" alt="Flu"></a>
+                    </div>
+                    <div class="col-md-7 order-lg-1 title-kontak">
+                        <div class="row">
+                        <div class="col-12">
+                            <h3><b>Pertanyaan yang Sering Ditanyakan</b></h3>
+                        </div>
+                        <div class="col-12">
+                            <p>Mari mengenali lebih dalam tentang Covid-19, agar kita semua lebih waspada dan dapat menjaga diri kita, dan orang terkasih. Dibawah ini merupakan kumpulan dari pertanyaan-pertanyaan yang paling sering ditanyakan oleh masyarakat.</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="list-faq">
+        <div class="container mt-5">
+            <div class="col-md-6 col-search">
+                <div class="col-12 pr-0">
+                    <div class="row">
+                        <input type="text" id="myInput" onkeyup="searchFAQ()" placeholder="Cari pertanyaan" title="Cari pertanyaan">
+                        <img src="/img/search.png" alt="search">
+                    </div>
+                </div>
+            </div>
+
+            <section id="accordion">
+            <div class="col-12 toogle-faq pl-0" data-toggle="collapse" data-target="#text-faq">
+                <div class="col-1 text-center">1.</div>
+                <div class="col-11 pl-0">
+                    <div class="col-12 isi-faq px-0">
+                        <div class="col-lg-12 col-md-11 px-0">
+                            <span>Apa itu Novel Coronavirus (2019-nCoV)?</span>
+                        </div>
+                        <div class="col-1 col-icon-fa">
+                            <i class="fa fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <p id="text-faq" class="isi-text-faq collapse" data-parent="#accordion">
+                        Novel coronavirus (2019-nCoV) adalah jenis baru coronavirus yang belum pernah diidentifikasi sebelumnya pada manusia. Coronavirus merupakan keluarga besar virus yang menyebabkan penyakit pada manusia dan hewan. Pada manusia menyebabkan penyakit mulai flu biasa hingga penyakit yang serius seperti Middle East Respiratory Syndrome (MERS) dan Sindrom Pernapasan Akut Berat/ Severe Acute Respiratory Syndrome (SARS).<br><br>
+                        Pada 11 Februari 2020, World Health Organization (WHO) mengumumkan nama penyakit yang disebabkan 2019-nCov, yaitu Coronavirus Disease (COVID-19).
+                    </p>
+                </div>
+            </div>
+
+            <!-- <div class="col-12 toogle-faq pl-0" data-toggle="collapse" data-target="#text-faq2">
+                <div class="col-1 text-center">2.</div>
+                <div class="col-11 pl-0">
+                    <div class="col-12 isi-faq px-0">
+                        <div class="col-lg-12 col-md-11 px-0">
+                            <span>Bagaimana cara mencegah penularan COVID-19?</span>
+                        </div>
+                        <div class="col-1 col-icon-fa">
+                            <i class="fa fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div id="text-faq2" class="isi-text-faq collapse" data-parent="#accordion">
+                        Hingga saat ini, belum ada vaksin untuk mencegah penularan COVID-19.<br>Salah satu cara yang bisa dilakukan untuk mencegah tertularnya virus ini adalah:<br>
+                        <ol class="ol-isi-faq">
+                            <li>Menjaga kesehatan dan kebugaran agar sistem imunitas/ kekebalan tubuh meningkat.</li>
+                            <li>Mencuci tangan menggunakan air dan sabun atau  hand-rub berbasis alkohol. Mencuci tangan sampai bersih selain dapat membunuh virus yang mungkin ada di tangan kita, tindakan ini juga merupakan salah satu tindakan yang mudah dan murah. Sekitar 98% penyebaran penyakit bersumber dari tangan. Karena itu, menjaga kebersihan tangan adalah hal yang sangat penting.</li>
+                            <li>Ketika batuk dan bersin, upayakan menjaga agar lingkungan Anda tidak tertular. Tutup hidung dan mulut Anda dengan tisu atau dengan lengan (bukan dengan telapak tangan).</li>
+                            <li>Menjaga jarak saat berbicara dengan orang lain, sekurang- kurangnya satu meter, terutama dengan orang yang sedang menderita batuk, pilek/bersin dan demam. Saat seseorang terinfeksi penyakit saluran pernafasan, seperti 2019-nCoV, batuk/bersin dapat menghasilkan droplet yang mengandung virus. Jika kita terlalu dekat, virus tersebut dapat terhirup oleh kita.</li>
+                            <li>Hindari menyentuh mata, hidung dan mulut. Tangan menyentuh banyak hal yang dapat terkontaminasi virus. Jika kita menyentuh mata, hidung dan mulut dengan tangan yang terkontaminasi, maka virus dapat dengan mudah masuk ke tubuh kita.</li>
+                            <li>Gunakan masker penutup mulut dan hidung ketika Anda sakit atau saat berada di tempat umum.</li>
+                            <li>Buang tisu dan masker yang sudah digunakan ke tempat sampah, lalu cucilah tangan Anda.</li>
+                            <li>Hindari kontak dengan hewan ternak dan hewan liar yang terbukti tertular corona virus.</li>
+                            <li>Jangan makan daging yang tidak dimasak hingga matang.</li>
+                            <li>Menunda perjalanan ke daerah/negara dimana virus ini ditemukan seperti Tiongkok, seiring dengan informasi adanya penghentian sementara operasional penerbangan langsung dari dan ke daratan Cina dari pemerintah, sampai ada informasi lebih lanjut.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 toogle-faq pl-0" data-toggle="collapse" data-target="#text-faq20">
+                <div class="col-1 text-center">20.</div>
+                <div class="col-11 pl-0">
+                    <div class="col-12 isi-faq px-0">
+                        <div class="col-lg-12 col-md-11 px-0">
+                            <span>Apakah di Indonesia sudah ditemukan kasus yang terinfeksi?</span>
+                        </div>
+                        <div class="col-1 col-icon-fa">
+                            <i class="fa fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <p id="text-faq20" class="isi-text-faq collapse" data-parent="#accordion">
+                        Informasi terbaru dapat dilihat melalui: <a id="link-faq" href="https://infeksiemerging.kemkes.go.id/category/situasi-infeksi-emerging/info-corona-virus/#.XpFEa4gzZhE">http://infeksiemerging.kemkes.go.id/category/situasi-infeksi-emerging/info-corona-virus/</a>
+                    </p>
+                </div>
+            </div> -->
+
+            </section>
+
+        </div>
+    </section>
+
+    <% include templates/footer.ejs %>
+
+    <script>
+        $(document).ready(function(){
+            // Add minus icon for collapse element which is open by default
+            // $(".collapse.show").each(function(){
+            // 	$(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");
+            // });
+            
+            // Toggle plus minus icon on show hide of collapse element
+            $(".collapse").on('show.bs.collapse', function(){
+                $(this).prev(".isi-faq").find(".fa").removeClass("fa-chevron-down").addClass("fa-chevron-up");
+            }).on('hide.bs.collapse', function(){
+                $(this).prev(".isi-faq").find(".fa").removeClass("fa-chevron-up").addClass("fa-chevron-down");
+            });
+        });
+        
+        getFaq()
+        async function getFaq(){
+            try {
+                const getAPI = await fetch("/api/faq")
+                const result = await getAPI.json();
+                const data = result.data;
+                let list_faq = '';
+
+                data.forEach(list => {
+                    list_faq += '<div class="col-12 toogle-faq pl-0" data-toggle="collapse" data-target="#text-faq'+ list.id +'"><div class="col-1 text-center">'+ list.id +'.</div><div class="col-11 pl-0"><div class="col-12 isi-faq px-0"><div class="col-lg-12 col-md-11 px-0"><span>'+ list.pertanyaan +'</span></div><div class="col-1 col-icon-fa"><i class="fa fa-chevron-down"></i></div></div><div id="text-faq'+ list.id +'" class="isi-text-faq collapse" data-parent="#accordion">'+ list.jawaban +'</div></div></div>';
+                });
+
+                document.getElementById('accordion').innerHTML = list_faq;
+
+            } catch (e) {
+                console.log("Error read API faq");
+            }
+        }
+
+        function searchFAQ() {
+        var input, filter, row, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        row = document.getElementById("accordion");
+        tr = row.getElementsByClassName('toogle-faq');
+
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("span")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>

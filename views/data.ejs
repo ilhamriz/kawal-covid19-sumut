@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kawal Covid-19</title>
+    <link rel="stylesheet" href="/css/slick.css">
+    <link rel="stylesheet" href="/css/slick-theme.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@700&display=swap" rel="stylesheet">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+</head>
+<body>
+    <% include templates/navbar.ejs %>
+
+    <section id="head-data">
+        <div class="container px-0">
+            <div class="col-12 px-0">
+
+                <div class="col-12 title-angka">
+                    <h4>Dasboard Kasus Covid-19 di Sumatera Utara</h4>
+                    <p>Pembaruan Terakhir : <span id="last-update" class="font-angka">--</span></p>
+                </div>
+
+                <div class="col-12 wrap-data pb-4">
+                    <div class="row">
+
+                        <div class="col-lg-4 mb-3">
+                            <div class="col-12 wrap-data-1 bg-positif">
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="data-icon bg-positif-icon">
+                                            <img src="/img/positif.png" alt="Icon">
+                                        </div>
+                                        <p class="sub-title-data">Positif Covid-19</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 data-sumut px-0">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            Sumatera Utara
+                                        </div>
+                                        <div class="col-4 data-angka">
+                                            <p id="data-positif" class="font-angka">
+                                                --
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-sm-12 px-0" style="display: none;">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            Indonesia
+                                        </div>
+                                        <div class="col-4 data-angka">
+                                            <p id="data-positif" class="font-angka">
+                                                19
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>                            
+                        </div>
+
+                        <div class="col-lg-4 mb-3">
+                            <div class="col-12 wrap-data-1 bg-sembuh">
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="data-icon bg-sembuh-icon">
+                                            <img src="/img/heart.png" alt="Icon">
+                                        </div>
+                                        <p class="sub-title-data">Sembuh</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 data-sumut px-0">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            Sumatera Utara
+                                        </div>
+                                        <div class="col-4 data-angka">
+                                            <p id="data-sembuh" class="font-angka">
+                                                --
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-sm-12 px-0" style="display: none;">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            Indonesia
+                                        </div>
+                                        <div class="col-4 data-angka">
+                                            <p id="data-positif" class="font-angka">
+                                                19
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="col-12 wrap-data-1 bg-meninggal">
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="data-icon bg-meninggal-icon">
+                                            <img src="/img/rip.png" alt="Icon">
+                                        </div>
+                                        <p class="sub-title-data">Meninggal</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 data-sumut px-0">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            Sumatera Utara
+                                        </div>
+                                        <div class="col-4 data-angka">
+                                            <p id="data-meninggal" class="font-angka">
+                                                --
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-sm-12 px-0" style="display: none;">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            Indonesia
+                                        </div>
+                                        <div class="col-4 data-angka">
+                                            <p id="data-positif" class="font-angka">
+                                                19
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-10 mx-auto text-center">
+                            <div class="row">
+                            <div class="col-lg-6 mb-3">
+                                <div class="col-12 wrap-odp bg-white px-0">
+                                    <div class="col-12 title-odp mb-3">
+                                        <p>ODP (Orang Dalam Pemantauan)</p>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="col-md-4 data-odp">
+                                            <p id="data-odp" class="font-angka">0000</p>
+                                            <p>Total</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="col-12 wrap-odp bg-white px-0">
+                                    <div class="col-12 title-odp mb-3">
+                                        <p>PDP (Pasien Dalam Pengawasan)</p>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="col-md-4 data-odp text-center">
+                                            <p id="data-pdp" class="font-angka">0000</p>
+                                            <p>Total</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-lg-6">
+                            <div class="col-lg-12 wrap-odp bg-white">
+                                <div class="row">
+                                    <div class="col-12 title-odp mb-3">
+                                        <p>ODP (Orang Dalam Pemantauan)</p>
+                                    </div>
+                                    <div class="col-md-4 data-odp">
+                                        <p id="odp-km" class="font-angka">00</p>
+                                        <p>Karantina Mandiri</p>
+                                    </div>
+                                    <div class="col-md-4 data-odp">
+                                        <p id="odp-tg" class="font-angka">00</p>
+                                        <p>Tanpa Gejala</p>
+                                    </div>
+                                    <div class="col-md-4 data-odp">
+                                        <p id="odp-selesai" class="font-angka">00</p>
+                                        <p>Selesai Pemantauan</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="col-lg-12 wrap-odp bg-white">
+                                <div class="row">
+                                    <div class="col-12 title-odp mb-3">
+                                        <p>PDP (Pasien Dalam Pengawasan)</p>
+                                    </div>
+                                    <div class="col-md-4 data-odp pr-0">
+                                        <p id="pdp-dirawat" class="font-angka">00</p>
+                                        <p>Dirawat</p>
+                                    </div>
+                                    <div class="col-md-4 data-odp pr-0">
+                                        <p id="pdp-pulang" class="font-angka">00</p>
+                                        <p>Pulang</p>
+                                    </div>
+                                    <div class="col-md-4 data-odp pr-0">
+                                        <p id="pdp-meninggal" class="font-angka">00</p>
+                                        <p>Meninggal</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="chart">
+        <div class="container mt-5">
+            <div class="col-12 px-0">
+                <h5 id="title-grafik">Grafik Total Harian</h5>
+                <div class="row min-chart">
+                    <div class="col-lg-4">
+                        <div class="col-12 bg-white">
+                            <h5>Positif Covid-19</h5>
+                            <canvas id="posChart" width="400" height="300"></canvas> 
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="col-12 bg-white">
+                            <h5>Sembuh</h5>
+                            <canvas id="semChart" width="400" height="300"></canvas> 
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="col-12 bg-white">
+                            <h5>Meninggal</h5>
+                            <canvas id="menChart" width="400" height="300"></canvas> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <section id="tabel-kota">
+            <div class="container mt-4 px-0">
+                <div class="col-12 wrap-table bg-white">
+                    <h5><b>Tabel Covid-19 Sumatera Utara</b></h5>
+    
+                    <div class="col-md-4 col-search btn dropdown-toggle" data-toggle="dropdown">
+                        <span>Cari kota/kabupaten</span>
+                        <img src="/img/botArrow.png" alt="">
+                        <div class="dropdown-menu" id="dropCC">
+                            <!-- FROM JS -->
+                        </div>
+                    </div>
+                    
+                    <div class="table-responsive">
+                        <table id="myTable" class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Kota/Kabupaten</th>
+                                    <th>Total ODP</th>
+                                    <th>Total PDP</th>
+                                    <th>Positif</th>
+                                    <th>Sembuh</th>
+                                    <th>Meninggal</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bodyTable">
+                                <!-- FROM DBS -->
+                            </tbody>
+                        </table>
+                    </div>
+    
+                </div>
+            </div>
+        </section>
+
+            <div class="col-12 px-0">
+                <div class="row big-chart">
+                    <div class="col-lg-6">
+                        <div class="col-12 bg-white">
+                            <h5>Total ODP</h5>
+                            <canvas id="odpChart" width="300" height="200"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="col-12 bg-white">
+                            <h5>Total PDP</h5>
+                            <canvas id="pdpChart" width="300" height="200"></canvas> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- <section id="tabel-kota">
+        <div class="container mt-4">
+            <div class="col-12 wrap-table bg-white">
+                <h5><b>Tabel Covid-19 Sumatera Utara</b></h5>
+
+                <div class="col-md-4 col-search btn dropdown-toggle" data-toggle="dropdown">
+                    <span>Cari kota/kabupaten</span>
+                    <img src="/img/botArrow.png" alt="">
+                    <div class="dropdown-menu" id="dropCC">
+                      FROM JS
+                    </div>
+                </div>
+                
+                <div class="table-responsive">
+                    <table id="myTable" class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Kota/Kabupaten</th>
+                                <th>Total ODP</th>
+                                <th>Total PDP</th>
+                                <th>Positif</th>
+                                <th>Sembuh</th>
+                                <th>Meninggal</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bodyTable">
+                            FROM DBS
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </section> -->
+    
+    <% include templates/footer.ejs %>
+
+    <script>
+    getDataAngka();
+    async function getDataAngka(){
+        try{
+            const getAPI = await fetch("/api/pasien")
+            const result = await getAPI.json();
+
+            const pick = result.data;
+            const last = result.data.length-1;
+
+            const lastUpdate = pick[last].tanggal.split("-");
+            lastUpdate.reverse();
+            document.getElementById('last-update').innerHTML = lastUpdate.join("-");
+
+            const ps_positif = pick[last].pc19_dirawat;
+            const ps_sembuh = pick[last].pc19_sembuh;
+            const ps_meninggal = pick[last].pc19_meninggal;
+            const data_odp = pick[last].odp;
+            const data_pdp = pick[last].pdp
+
+            // console.log(todos.data[todos.data.length-1]);
+            document.getElementById('data-positif').innerHTML = ps_positif;
+            document.getElementById('data-sembuh').innerHTML = ps_sembuh;
+            document.getElementById('data-meninggal').innerHTML = ps_meninggal;
+            document.getElementById('data-odp').innerHTML = data_odp;
+            document.getElementById('data-pdp').innerHTML = data_pdp;
+        }
+        catch (e) {
+            console.log("Error reading the todos.")
+        }
+    }
+    
+    getCovidKab();
+    async function getCovidKab(){
+        const getAPI = await fetch("/api/pasien/recent")
+        const result = await getAPI.json();
+        const data = result.data;
+        let tbody = "";
+        let dropCC = "";
+
+        for (let i = 0; i < data.length; i++) {
+            let j = i+1;
+            tbody += "<tr><td>"+ j +"</td><td>"+ data[i].kabupaten +"</td><td>"+ data[i].odp +"</td><td>"+ data[i].pdp +"</td><td>"+ data[i].pc19_dirawat +"</td><td>"+ data[i].pc19_sembuh +"</td><td>"+ data[i].pc19_meninggal +"</td></tr>";
+            dropCC += "<p id='myInput"+j+"' class='dropdown-item' onclick='searchCC("+j+")'>"+ data[i].kabupaten +"</p>";
+        }
+
+        document.getElementById('bodyTable').innerHTML = tbody;
+        document.getElementById('dropCC').innerHTML = dropCC;
+    }
+
+    function searchCC(j) {
+        var input, filter, table, tr, td, i, txtValue;
+
+        input = document.getElementById("myInput"+j);
+        filter = input.textContent;
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue == filter) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }       
+        }
+    }
+    </script>
+
+    <script>
+    let xData = [];
+    let yData = [];
+
+    for(var a=0; a<5; a++){
+        getChart(a);
+    }
+    
+    async function getChart(code){
+        if (code == 0) {
+            var ctx = document.getElementById('posChart');
+        }
+        else if (code == 1) {
+            var ctx = document.getElementById('semChart');
+        }
+        else if (code == 2) {
+            var ctx = document.getElementById('menChart');
+        }
+        else if (code == 3) {
+            var ctx = document.getElementById('odpChart');
+        }
+        else
+            var ctx = document.getElementById('pdpChart');
+
+        await readTodos(code);
+
+        const listLabel = ['Positif', 'Sembuh', 'Meninggal','Total ODP', 'Total PDP'];
+
+        const bgColor = [];
+        const borderColor = [];
+
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: xData,
+                datasets: [{
+                    label: listLabel[code],
+                    data: yData,
+                    backgroundColor: 'rgba(50, 163, 127, .8)',
+                    borderColor: 'rgba(24, 78, 61, 1)',
+                    borderWidth: 1,
+                    fill: true,
+                    pointRadius: 6
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Tanggal-Bulan'
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                legend: {
+                    display: false
+                }
+                // title: {
+                //     display: true,
+                //     text: 'Positif Covid-19',
+                //     fontSize: 16
+                // }
+            }
+        });
+
+        xData = [];
+        yData = [];
+        // console.log(ctx.style);
+        // $('.chartjs-render-monitor').removeAttr('style');
+        // $('.chartjs-render-monitor').removeAttr('width');
+        // $('.chartjs-render-monitor').removeAttr('height');
+        // ctx.height = "320";
+    }
+
+    async function readTodos(code) {
+        try{
+            const getAPI = await fetch("/api/pasien")
+            const result = await getAPI.json();
+            const data = result.data;
+            let limit = data.length-15;
+
+            for (let i = limit; i < data.length; i++) {
+                let el = data[i];
+                var tgl = el.tanggal.split("-");
+                tgl.reverse();
+                tgl.pop();
+                xData.push(tgl.join("-"));
+
+                if (code == 0) {
+                    yData.push(parseInt(el.pc19_dirawat));
+                }
+                else if (code == 1) {
+                    yData.push(parseInt(el.pc19_sembuh));
+                }
+                else if (code == 2) {
+                    yData.push(parseInt(el.pc19_meninggal));
+                }
+                else if (code == 3) {
+                    // var totalODP = parseInt(t.odp);
+                    yData.push(parseInt(el.odp));
+                }
+                else{
+                    yData.push(parseInt(el.pdp));
+                }
+
+            }
+
+            // data.forEach(t=>{
+            //     var tgl = t.tanggal.split("-");
+            //     tgl.reverse();
+            //     tgl.pop();
+            //     xData.push(tgl.join("-"));
+
+            //     if (code == 0) {
+            //         yData.push(parseInt(t.pc19_dirawat));
+            //     }
+            //     else if (code == 1) {
+            //         yData.push(parseInt(t.pc19_sembuh));
+            //     }
+            //     else if (code == 2) {
+            //         yData.push(parseInt(t.pc19_meninggal));
+            //     }
+            //     else if (code == 3) {
+            //         // var totalODP = parseInt(t.odp);
+            //         yData.push(parseInt(t.odp));
+            //     }
+            //     else{
+            //         yData.push(parseInt(t.pdp));
+            //     }
+            // });
+        
+        }
+        catch (e) {
+            console.log("Error reading the todos.")
+        }
+    }
+    </script>
+
+</body>
+</html>

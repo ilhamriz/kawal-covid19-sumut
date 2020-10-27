@@ -1,0 +1,16 @@
+[
+  {
+    "last_date": "2020-10-25",
+    "jumlah_kasus": 12562,
+    "jumlah_sembuh": 10201,
+    "jumlah_meninggal": 516,
+    "jumlah_dirawat": 1845
+  },
+  {
+    "last_date": "2020-10-26",
+    "jumlah_kasus": 12655,
+    "jumlah_sembuh": 10286,
+    "jumlah_meninggal": 523,
+    "jumlah_dirawat": 1846
+  }
+]

@@ -1,0 +1,36 @@
+<footer>
+    <div class="footer text-center">
+        <div class="col-12">
+            <p>&copy; 2020 Kawal Covid-19 Provinsi Sumatera Utara. Created by M. Ilham Rizky</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Add active class to the current button (highlight it)
+    var header = document.getElementById("ul-nav");
+    var btns = header.getElementsByClassName("nav-item");
+
+    var active = "<%= active %>";
+
+    for (var i = 0; i < btns.length; i++) {
+    //   btns[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      btns[active].className += " active";
+    }
+
+    $(document).ready(function(){
+        // Add minus icon for collapse element which is open by default
+        // $(".collapse.show").each(function(){
+        // 	$(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");
+        // });
+        
+        // Toggle plus minus icon on show hide of collapse element
+        $(".collapse").on('show.bs.collapse', function(){
+            $(this).prev(".navbar-toggler").find(".fa").removeClass("fa-bars").addClass("fa-times");
+        }).on('hide.bs.collapse', function(){
+            $(this).prev(".navbar-toggler").find(".fa").removeClass("fa-times").addClass("fa-bars");
+        });
+    });
+</script>

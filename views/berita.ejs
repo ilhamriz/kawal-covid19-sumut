@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kawal Covid-19</title>
+    <link rel="stylesheet" href="/css/slick.css">
+    <link rel="stylesheet" href="/css/slick-theme.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@700&display=swap" rel="stylesheet">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <% include templates/navbar.ejs %>
+    <script>
+        let id_berita = "<%= id_berita %>";
+    </script>
+
+    <% if (!id_berita){ %>
+
+        <section id="berita">
+            <div class="container">
+                <div class="col-12 judul-berita"><h3>Berita Sumatera Utara</h3></div>
+    
+                <section id="sec-berita"><!-- FROM DBS --></section>
+                <!-- <div class="col-12 wrap-berita-h bg-white">
+                    <div class="col-12 list-berita">
+                        <div class="row">
+                        <div class="col-lg-7 text-berita-h">
+                            <a href="#"><h4>Sumut Terima Bantuan 50 Ribu</h4></a>
+                            <p>Tanggal Upload</p>
+                            <p class="isi-berita">KOTA MEDAN - Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, esse aliquid illo omnis tenetur voluptatum autem explicabo optio numquam, rerum mollitia voluptatibus tempore accusamus quam officiis! Vel consequuntur dolorem quidem sunt tempore, sint in laudantium?</p>
+                        </div>
+                        <div class="col-lg-5 img-berita-h">
+                            <img src="/img/banner9.jpeg" width="100%" alt="Berita">
+                        </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+
+        <script>
+            getBerita();
+            async function getBerita(){
+                try {
+                    const getAPI = await fetch("/api/artikel/kategori/1")
+                    const result = await getAPI.json();
+                    const data = result.data;
+                    let list_berita = "";
+        
+                    data.forEach(list => {
+                        list_berita += "<div class='col-12 wrap-berita-h bg-white'><div class='col-12 list-berita'><div class='row'><div class='col-lg-7 text-berita-h px-0'><a href='/berita/"+ list.id +"'><h4>"+ list.judul +"</h4></a><p>"+ list.tanggal +"</p><p class='isi-berita'>"+ list.konten +"</p></div><div class='col-lg-5 img-berita-h'><img src='http://128.199.143.66:8080/artikel/"+list.thumbnail+"' width='100%'' alt='Berita'></div></div></div></div>";
+                    });
+        
+                    document.getElementById('sec-berita').innerHTML = list_berita;
+                    limitTextBerita();
+                } catch (error) {
+                    console.log("Error read API berita");
+                }
+            }
+            
+            function limitTextBerita(){
+                let p = document.getElementsByClassName('isi-berita');
+                let maxLength = 300;
+        
+                for (let i = 0; i < p.length; i++) {
+                    let text = p[i].innerText;
+                    let textLen = text.length;
+        
+                    if (textLen > maxLength) {
+                        var res = text.substr(0, maxLength) + '...';
+                        // console.log(res);
+                        p[i].innerText = res;
+                    }
+                }
+            }
+        </script>
+
+    <% } else { %>
+
+        <div class="container">
+            <section id="sec-berita">
+            <!-- <div class="col-12 wrap-berita-h bg-white">
+                <div class="col-12 list-berita px-0">
+                    <div class="col-lg-12 text-berita-h px-0">
+                        <h4>Sumut Terima Bantuan 50 Ribu</h4>
+                        <p>Tanggal Upload</p>
+                    </div>
+                    <div class="col-lg-9 img-berita-h mt-4 px-0">
+                        <img src="/img/banner9.jpeg" width="100%" alt="Berita">
+                    </div>
+                    <div class="col-lg-12 text-berita-h px-0">
+                        <p class="isi-berita">KOTA MEDAN - Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, esse aliquid illo omnis tenetur voluptatum autem explicabo optio numquam, rerum mollitia voluptatibus tempore accusamus quam officiis! Vel consequuntur dolorem quidem sunt tempore, sint in laudantium?</p>
+                    </div>
+                </div>
+            </div> -->
+            </section>
+        </div>
+
+        <script>
+            getBerita();
+            async function getBerita(){
+                try {
+                    const getAPI = await fetch("/api/artikel/kategori/1")
+                    const result = await getAPI.json();
+                    const data = result.data;
+                    // let list = data
+                    let list_berita = "";
+
+        
+                    data.forEach(list => {
+                        if (list.id == id_berita) {
+                            list_berita += '<div class="col-12 wrap-berita-h bg-white"><div class="col-12 list-berita px-0"><div class="col-lg-12 text-berita-h px-0"><h4>'+ list.judul +'</h4><p>'+ list.tanggal +'</p></div><div class="col-lg-9 img-berita-h mt-4 px-0"><img src="http://128.199.143.66:8080/artikel/'+  list.thumbnail+'" width="100%" alt="Berita"></div><div class="col-lg-12 text-berita-h px-0"><p class="isi-berita">'+ list.konten +'</p></div></div></div>';
+                        }
+                    });
+        
+                    document.getElementById('sec-berita').innerHTML = list_berita;
+                } catch (error) {
+                    console.log("Error read API berita");
+                }
+            }
+            
+        </script>
+        
+    <% } %>
+
+    <% include templates/footer.ejs %>
+    
+</body>
+</html>

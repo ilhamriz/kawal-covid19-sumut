@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kawal Covid-19 Sumatera Utara</title>
+    <link rel="stylesheet" href="/css/slick.css">
+    <link rel="stylesheet" href="/css/slick-theme.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/baguetteBox.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@700&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"> -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/baguetteBox.js"></script>
+    <script src="/js/slick.min.js"></script>
+    
+</head>
+<body onload="hideSlick(), hideSlickThumb()">
+    <% include templates/navbar.ejs %>
+
+    <section id="head">
+        <div class="col-12">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-banner">
+                      <div id="slick" class="col-lg-12 px-0 wrap-banner fade-carousel" onmouseover="showSlick()" onmouseout="hideSlick()">
+                          <a href="/img/4.jpeg"><img id="imgThumb" src="/img/1.jpeg" alt="Banner"></a>
+                          <a href="/img/5.png"><img id="imgThumb" src="/img/2.png" alt="Banner"></a>
+                          <a href="/img/6.png"><img id="imgThumb" src="/img/3.png" alt="Banner"></a>
+                          <a href="/img/7.jpeg"><img id="imgThumb" src="/img/4.jpeg" alt="Banner"></a>
+                          <a href="/img/8.jpeg"><img id="imgThumb" src="/img/5.jpeg" alt="Banner"></a>
+                          <a href="/img/9.jpg"><img id="imgThumb" src="/img/6.jpg" alt="Banner"></a>
+                          <a href="/img/10.jpeg"><img id="imgThumb" src="/img/7.jpeg" alt="Banner"></a>
+                          <a href="/img/11.jpg"><img id="imgThumb" src="/img/8.jpg" alt="Banner"></a>
+                          <a href="/img/12.jpeg"><img id="imgThumb" src="/img/9.jpeg" alt="Banner"></a>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6 col-hub d-flex flex-column justify-content-end">
+                      <div class="container-call">
+
+                        <div class="col-lg-6 mb-3 px-0">
+                          <a id="call-head" href="tel:0821-6490-2482">
+                            <div class="col wrap-call">
+                              <div class="row">
+                                  <div class="wrap-call-icon">
+                                      <div class="call-icon">
+                                          <img src="/img/phone.png" alt="Icon-phone">
+                                      </div>
+                                  </div>
+                                  <div class="col-9 pr-0">
+                                      <p><b>Call Center Covid-19</b></p>
+                                      <p>PemProv Sumatera Utara</p>
+                                      <p>0821-6490-2482</p>
+                                  </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div> 
+                        
+                        <div class="col-lg-6 mb-3 pr-0">
+                          <a id="call-head" href="tel:0811-6106-111">
+                            <div class="col wrap-call">
+                              <div class="row">
+                                  <div class="wrap-call-icon">
+                                      <div class="call-icon">
+                                          <img src="/img/phone.png" alt="Icon-phone">
+                                      </div>
+                                  </div>
+                                  <div class="col-9 pr-0">
+                                      <p><b>Hotline</b></p>
+                                      <p>Media Center Gugus Tugas</p>
+                                      <p>0811-6106-111</p>
+                                  </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+
+
+                      <div class="wrap-call">
+                        <div class="d-flex">
+                            <div class="wrap-call-icon">
+                                <div class="call-icon">
+                                    <img src="/img/pin.png" alt="Icon-location">
+                                </div>
+                            </div>
+                            <div class="col-9 pr-0">
+                                <p><b>Posko Pengaduan Covid-19</b></p>
+                                <p>PemProv Sumatera Utara</p>
+                                <p>Kantor Gubernur</p>
+                                <p>Jl. P. Diponegoro No. 30 Medan</p>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="data">
+        <div class="container">
+            <div class="col-12 px-3 wrap-data pb-4">
+              <h4><strong>Angka Kejadian di Sumatera Utara</strong></h4>
+              <p>Update Terakhir: <span id="last-update">--</span></p>
+              <div class="row mt-3">
+
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-12 wrap-data-1 main-card-data">
+                      <h6>Total Terkonfirmasi</h6>
+                      <p id="data-total">--</p>
+                      <p id="data-total-tambah">--</p>
+                      <!-- <div class="col-sm-12 text-center">
+                        <p class="sub-title-data text-center">Positif Covid-19</p>
+                          <div class="row">
+                              <div class="data-icon bg-positif-icon">
+                                  <img src="/img/positif.png" alt="Icon">
+                              </div>
+                              <p class="sub-title-data">Positif Covid-19</p>
+                          </div>
+                      </div>
+                      <div class="col-sm-12 data-sumut px-0">
+                          <div class="row">
+                              <div class="col-8">
+                                  Sumatera Utara
+                              </div>
+                              <div class="col-4 data-angka">
+                                  <p id="data-positif" class="font-angka">
+                                      --
+                                  </p>
+                              </div>
+                          </div>
+                      </div> -->
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-12 wrap-data-1 data-rawat">
+                    <h6>Dalam Perawatan</h6>
+                      <p id="data-rawat">--</p>
+                      <p id="data-rawat-tambah">--</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-12 wrap-data-1 data-sembuh">
+                      <h6>Sembuh</h6>
+                      <p id="data-sembuh">--</p>
+                      <p id="data-sembuh-tambah">--</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-12 wrap-data-1 data-meninggal">
+                      <h6>Meninggal</h6>
+                      <p id="data-meninggal">--</p>
+                      <p id="data-meninggal-tambah">--</p>
+                    </div>
+                  </div>
+
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="info">
+        <div class="container">
+            <div class="col-12 px-0">                
+
+                <div class="col-12 col-FAQ px-0">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="col-12 wrap-FAQ bg-white">
+                              <div>
+                                <h5><b>Punya Pertanyaan Terkait Covid-19 ?</b></h5>
+                                <p>Penting bagi Anda untuk menilai kondisi secara mandiri. Apakah Anda memiliki gejala ?</p>
+                              </div>
+                                <a href="/faq">
+                                    <button class="btn btn-FAQ">Tanyakan Sekarang</button>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8">
+                          <div class="col-12 wrap-table bg-white">
+                            <h5><b>Hubungi Call Center</b></h5>
+
+                            <div class="col-md-5 col-search btn dropdown-toggle" data-toggle="dropdown">
+                              <span>Cari kota/kabupaten</span>
+                              <img src="/img/botArrow.png" alt="Arrow">
+                              <div class="dropdown-menu" id="dropCC">
+                                <!-- FROM JS -->
+                              </div>
+                            </div>
+                            
+                            <div class="table-responsive">
+                              <table id="myTable" class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Kota/Kabupaten</th>
+                                        <th>Call Center</th>
+                                        <th>Website</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bodyTable">
+                                    <!-- FROM DBS -->
+                                </tbody>
+                              </table>
+                            </div>
+
+                            <div class="col-12 text-center mt-4">
+                              <a href="/kontak">
+                                <button class="btn btn-data">
+                                    Lihat Selengkapnya
+                                    <img src="/img/arrow.png" alt="Arrow">
+                                </button>
+                              </a>
+                            </div>
+
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 wrap-RS bg-white">
+                    <div class="row">
+                        <div class="col-12">
+                            <h5><b>Daftar Rumah Sakit Rujukan di Sumatera Utara</b></h5>
+                            <p>Berikut ini adalah rumah sakit yang menjadi rujukan untuk pasien dengan status Pasien dalam Pengawasan. Anda harus mengunjungi fasilitas kesehatan terdekat terlebih dahulu seperti klinik/rumah sakit umum sebelum akhirnya dapat dirujuk ke rumah sakit khusus di bawah ini.</p>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <div class="col-md-4 col-search btn dropdown-toggle" data-toggle="dropdown">
+                                <span>Cari rumah sakit rujukan</span>
+                                <img src="/img/botArrow.png" alt="arrow">
+                                <div class="dropdown-menu" id="dropRS">
+                                  <!-- FROM JS -->
+                                </div>
+                            </div>
+                            <div class="row" id="row-card-RS">
+                                <!-- FROM DBS -->
+                            </div>
+                        </div>
+
+                        <div class="col-12 text-center mt-4">
+                            <a href="/kontak">
+                                <button class="btn btn-data">
+                                    Lihat Rumah Sakit Lainnya
+                                </button>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-12 wrap-risiko text-white">
+                    <div class="row">
+                        <div class="col-lg-6 con-risiko">
+                            <div>
+                              <h3><strong>Ketahui Risiko dari COVID-19</strong></h3>
+                              <p>COVID-19 merupakan penyakit yang disebabkan Novel Coronavirus 2019. Meski bergejala mirip dengan flu biasa, COVID-19 sampai saat ini memiliki fatalitas lebih tinggi. Virus ini juga menyebar dengan sangat cepat karena bisa pindah dari orang ke orang bahkan sebelum orang tersebut menunjukkan gejala.</p>
+                            </div>
+                              <a href="https://covid19.prixa.ai/partner/80b47a20-1353-49e9-af91-a0a5995ca89f/app/52b7d983-3e5d-49cc-9c99-508dc779aad3"><button class="btn btn-data">Periksa Diri Saya</button></a>
+                        </div>
+                        <div class="col-lg-6 img-covid text-center">
+                            <a href="https://www.freepik.com/stories"><img src="/img/risiko-red2.png" alt="Illustration" width="65%"></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="artikel-home">
+        <div class="container">
+            
+            <div class="col-12 wrap-risiko bg-white mt-4">
+                <div class="row">
+                  <div class="col-lg-5 img-covid text-center">
+                      <a href="https://www.freepik.com/stories" target="blank">
+                        <img src="/img/hand-wash.png" alt="Hand Wash" width="80%">
+                        <img src="/img/use-mask.png" alt="Use Mask" width="80%">
+                      </a>
+                  </div>
+                  <div class="col-lg-7 con-risiko">
+                      <div id="put-lindungi">
+                        <h3><strong>Tetap Waspada dengan menerapkan AKB</strong></h3>
+                        <p>Selama vaksin belum ditemukan, cara terbaik untuk kembali beraktivitas adalah dengan menerapkan ADAPTASI KEBIASAAN BARU (AKB) di tengah pandemi.</p>                       
+                        <p>Berdasarkan Peraturan Gubernur No.63 tahun 2020, penentuan risiko kesehatan masyarakat di Daerah Kabupaten/Kota yang dikeluarkan oleh Satuan Tugas Penanganan Covid-19 Nasional secara berkala setiap minggu, diatur meliputi 4 ZONA RISIKO, yaitu:</p>
+                        <ul class="mt-3 ml-3">
+                          <li>Level 1 <strong class="green">Tidak terdampak/tidak ada kasus (Hijau)</strong></li>
+                          <li>Level 2 <strong class="yellow">Risiko rendah (Kuning)</strong></li>
+                          <li>Level 3 <strong class="orange">Risiko sedang (Oranye)</strong></li>
+                          <li>Level 4 <strong class="red">Risiko tinggi (Merah)</strong></li>
+                        </ul>
+                        <p>Warga dapat melihat peta sebaran berdasarkan zona risiko <a id="zona-risiko" href="https://covid19.go.id/peta-risiko" target="blank">di sini</a></p>
+                        <p>Lalu, apa saja yang harus wargi Jabar perhatikan saat mulai beraktivitas kembali?</p>
+                        <p>Hal mendasar yang perlu wargi terapkan adalah protokol kesehatan dalam setiap akan melakukan kegiatan seperti:</p>
+                        <ul class="list-lindungi">
+                          <li>
+                            <img src="/img/checklist.png" alt="">Mencuci tangan secara berkala
+                          </li>
+                          <li>
+                            <img src="/img/checklist.png" alt="">Gunakan masker saat keluar rumah
+                          </li>
+                          <li>
+                            <img src="/img/checklist.png" alt="">Selalu menjaga jarak min. 1 meter dan hindari kontak fisik dengan orang lain
+                          </li>
+                          <li>
+                            <img src="/img/checklist.png" >Membawa hand sanitizer/tisu basah untuk kebersihan darurat (jika tidak ada fasilitas cuci tangan)
+                          </li>
+                          <li>
+                            <img src="/img/checklist.png" alt="">Membawa peralatan makan sendiri
+                          </li>
+                        </ul>
+
+                        <p>Protokol harus selalu wargi terapkan di mana saja dan kapan saja. Saat sedang berbelanja di pasar, mulai kembali masuk kantor, ataupun sedang di area publik seperti halte dan taman. Jangan lupa untuk selalu pakai masker segera mandi dan ganti pakaian saat sampai di rumah.</p>
+
+                        <p>Jika merasa tidak sehat atau memiliki gejala demam, maka wargi sebaiknya tetap berkegiatan dari rumah. Karena di setiap kebiasaan baru, selalu ada harapan untuk keluarga dan kerabat agar tetap aman. Terus waspada dan jaga diri jaga sesama dengan AKB.</p>
+                      </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-12 wrap-risiko bg-white mt-4">
+                <div class="row">                    
+                    <div class="col-lg-5 img-question pr-3 order-1">
+                        <a href="https://www.freepik.com/stories"><img id="question" src="/img/question-com.png" alt="Apa itu Covid-19?"></a>
+                    </div>
+                    <div class="col-lg-7 con-apa-covid">
+                        <div id="put-apacovid">
+                          <h3><strong>Apa Itu COVID-19?</strong></h3>
+                          <p>COVID-19 adalah penyakit yang disebabkan oleh Novel Coronavirus (2019-nCoV), jenis baru coronavirus yang pada manusia menyebabkan penyakit mulai flu biasa hingga penyakit yang serius seperti Middle East Respiratory Syndrome (MERS) dan Sindrom Pernapasan Akut Berat/ Severe Acute Respiratory Syndrome (SARS).</p>
+
+                          <p class="mt-3">Pada 11 Februari 2020, World Health Organization (WHO) mengumumkan nama penyakit yang disebabkan 2019-nCov, yaitu <strong>Coronavirus Disease (COVID-19).</strong></p>
+
+                          <h5 class="mt-3"><strong>Gejala</strong></h5>
+                          <p>Gejala umum berupa demam ≥38°C, batuk kering, dan sesak napas. Jika ada orang yang dalam 14 hari sebelum muncul gejala tersebut pernah melakukan perjalanan ke negara terjangkit, atau pernah merawat/kontak erat dengan penderita COVID-19, maka terhadap orang tersebut akan dilakukan pemeriksaan laboratorium lebih lanjut untuk memastikan diagnosisnya.</p>
+
+                          <h5 class="mt-3"><strong>Penularan</strong></h5>
+                          <p>Seseorang dapat terinfeksi dari penderita COVID-19. Penyakit ini dapat menyebar melalui tetesan kecil (droplet) dari hidung atau mulut pada saat batuk atau bersin. Droplet tersebut kemudian jatuh pada benda di sekitarnya. Kemudian jika ada orang lain menyentuh benda yang sudah terkontaminasi dengan droplet tersebut, lalu orang itu menyentuh mata, hidung atau mulut (segitiga wajah), maka orang itu dapat terinfeksi COVID-19. Seseorang juga bisa terinfeksi COVID-19 ketika tanpa sengaja menghirup droplet dari penderita. Inilah sebabnya mengapa kita penting untuk menjaga jarak hingga kurang lebih satu meter dari orang yang sakit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- <section id="thumbInfo">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-banner">
+                    <div id="thumb" class="col-lg-12 px-0 wrap-banner thumbnail-carousel" onmouseover="showSlickThumb()" onmouseout="hideSlickThumb()">
+                        
+                        <a href="#"><img id="imgThumb" src="#" alt="Banner"></a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </section> -->
+    
+    <% include templates/footer.ejs %>
+
+    <script src="/js/script.js"></script>
+    
+    <script>
+      getDataPasien();
+      getDataCC();
+      getDataRS();
+      setTimeout(limitCC, 1000);
+      setTimeout(limitRS, 1000);
+    </script>
+</body>
+</html>

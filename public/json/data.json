@@ -1,0 +1,212 @@
+{
+  "call_center": [
+    {
+      "nama": "Kab. Asahan",
+      "website": "https://corona.asahankab.go.id/",
+      "call_center": ["0812 6582 827", "0813 6150 7040", "0813 9627 9043"]
+    },
+    {
+      "nama": "Kab. Batu Bara",
+      "website": "https://siagacovid19.batubarakab.go.id/",
+      "call_center": ["0813 7696 6475"]
+    },
+    {
+      "nama": "Kab. Dairi",
+      "website": "https://covid19.dairikab.go.id/",
+      "call_center": ["0627 2521 808", "0823 6888 2119"]
+    },
+    {
+      "nama": "Kab. Deli Serdang",
+      "website": "https://covid19.deliserdangkab.go.id/",
+      "call_center": ["061 7951 849"]
+    },
+    {
+      "nama": "Kab. Humbang Hasundutan",
+      "website": "https://covid19.humbanghasundutankab.go.id/",
+      "call_center": ["-"]
+    },
+    {
+      "nama": "Kab. Karo",
+      "website": "https://covid19.karokab.go.id/",
+      "call_center": ["0628 2332 291"]
+    },
+    {
+      "nama": "Kab. Labuhan Batu",
+      "website": "https://covid19.labuhanbatukab.go.id/",
+      "call_center": ["0624 2600 999"]
+    },
+    {
+      "nama": "Kab. Labuhan Batu Selatan",
+      "website": "https://infocovid19.labuhanbatuselatankab.go.id/",
+      "call_center": ["0813 6024 8401"]
+    },
+    {
+      "nama": "Kab. Labuhan Batu Utara",
+      "website": "http://covid19.labura.go.id/",
+      "call_center": ["0813 9755 1407", "0813 6158 1153"]
+    },
+    {
+      "nama": "Kab. Langkat",
+      "website": "https://coronainfo.langkatkab.go.id/",
+      "call_center": ["0813 9603 2994"]
+    },
+    {
+      "nama": "Kab. Mandailing Natal",
+      "website": "http://corona.madina.go.id/",
+      "call_center": ["0852 9792 7915", "0822 7494 7892"]
+    },
+    {
+      "nama": "Kab. Nias",
+      "website": "http://covid19.niaskab.go.id/",
+      "call_center": ["0852 9638 7441", "0852 6163 0999"]
+    },
+    {
+      "nama": "Kab. Nias Barat",
+      "website": "https://covid19.niasbaratkab.go.id/",
+      "call_center": ["0823 6209 3099"]
+    },
+    {
+      "nama": "Kab. Nias Selatan",
+      "website": null,
+      "call_center": ["0823 7094 1588", "0812 6994 2338", "0813 6267 3933"]
+    },
+    {
+      "nama": "Kab. Nias Utara",
+      "website": "https://covid19.niasutarakab.go.id/",
+      "call_center": ["0852 6276 8991"]
+    },
+    {
+      "nama": "Kab. Padang Lawas",
+      "website": "http://covid19.padanglawaskab.go.id/",
+      "call_center": ["-"]
+    },
+    {
+      "nama": "Kab. Padang Lawas Utara",
+      "website": "https://corona.padanglawasutarakab.go.id/",
+      "call_center": ["0822 5829 7702", "0812 6046 1981", "0812 8594 5251", "0811 6384 10"]
+    },
+    {
+      "nama": "Kab. Pakpak Bharat",
+      "website": "https://covid19.pakpakbharatkab.go.id/",
+      "call_center": ["0811 6311 109", "0813 9781 8280"]
+    },
+    {
+      "nama": "Kab. Samosir",
+      "website": "http://samosirkab.go.id/covid19",
+      "call_center": ["-"]
+    },
+    {
+      "nama": "Kab. Serdang Bedagai",
+      "website": "https://infocovid19.serdangbedagaikab.go.id/",
+      "call_center": ["0812 6963 2411", "0812 6592 0793"]
+    },
+    {
+      "nama": "Kab. Simalungun",
+      "website": "http://covid19.simalungunkab.go.id/",
+      "call_center": ["0812 6490 7909"]
+    },
+    {
+      "nama": "Kab. Tapanuli Selatan",
+      "website": "https://covid19.tapselkab.go.id/",
+      "call_center": ["0813 9745 7526", "0813 9650 7348"]
+    },
+    {
+      "nama": "Kab. Tapanuli Tengah",
+      "website": "https://covid19.tapteng.go.id/",
+      "call_center": ["0852 7040 7878"]
+    },
+    {
+      "nama": "Kab. Tapanuli Utara",
+      "website": "http://covid19.taputkab.go.id/",
+      "call_center": ["-"]
+    },
+    {
+      "nama": "Kab. Toba",
+      "website": "http://kawalcovid.tobasamosirkab.go.id/",
+      "call_center": ["0811 6091 084"]
+    },
+    {
+      "nama": "Kota Binjai",
+      "website": "http://binjaimelawancovid19.binjaikota.go.id/",
+      "call_center": ["0813 6170 3857", "0812 3279 5399"]
+    },
+    {
+      "nama": "Kota Gunungsitoli",
+      "website": "http://covid19.gunungsitolikota.go.id/",
+      "call_center": ["0823 7050 5266"]
+    },
+    {
+      "nama": "Kota Medan",
+      "website": "https://covid19.pemkomedan.go.id/",
+      "call_center": ["0813 7588 4531", "0821 6197 7779"]
+    },
+    {
+      "nama": "Kota Padangsidimpuan",
+      "website": null,
+      "call_center": ["0822 8921 6183"]
+    },
+    {
+      "nama": "Kota Pematang Siantar",
+      "website": "http://corona.pematangsiantar.go.id/",
+      "call_center": ["0812 6000 4795"]
+    },
+    {
+      "nama": "Kota Sibolga",
+      "website": null,
+      "call_center": ["0812 6478 6739"]
+    },
+    {
+      "nama": "Kota Tanjung Balai",
+      "website": "http://covid19.tanjungbalaikota.go.id/",
+      "call_center": ["0623 92056"]
+    },
+    {
+      "nama": "Kota Tebing Tinggi",
+      "website": "http://covid19.tebingtinggikota.go.id/",
+      "call_center": ["0621 21272"]
+    }
+  ],
+  "rs_rujukan":[
+    {
+      "nama": "RSU H. Adam Malik Medan",
+      "alamat": "Jl. Bunga Lau No.17, Kemenangan Tani, Kec. Medan Tuntungan, Kota Medan, 20136",
+      "no_telp": ["(061) 8360 143", "0812-6013-0606"]
+    },
+    {
+      "nama": "RSUD DR. Djasamen Saragih",
+      "alamat": "Jl. Sutomo No.230, Simalungun, Kec. Siantar Sel. Kota Pematang Siantar, 21121",
+      "no_telp": ["(0622) 22959"]
+    },
+    {
+      "nama": "RSU Bunda Thamrin",
+      "alamat": "Jl. Sei Batang Hari No.28-30-42, Babura Sunggal, Kec. Medan Sunggal, Kota Medan, 20112",
+      "no_telp": ["(061) 88813616"]
+    },
+    {
+      "nama": "RSU Kabanjahe",
+      "alamat": "Jl. Selamat Ketaren No.08, Lau Cimba, Kabanjahe, Kabupaten Karo, 22111",
+      "no_telp": ["(0628) 22959"]
+    },
+    {
+      "nama": "RSU Tarutung",
+      "alamat": "Jl. Agus Salim No.1, Hutagalung Siwaluompu, Tarutung, Kabupaten Tapanuli Utara, 22411",
+      "no_telp": ["(0633) 21303"]
+    },
+    {
+      "nama": "RSU Padang Sidempuan",
+      "alamat": "Jl. Dr. Ferdinan Lumban Tobing No. 10, Padangsidimpuan",
+      "no_telp": ["(0634-21780)"]
+    },
+    {
+      "nama": "RS GL Tobing",
+      "alamat": "Limau Manis, Tj. Morawa, Kabupaten Deli Serdang, 20362",
+      "no_telp": ["(061) 7944796"],
+      "hotline": ["0822-6804-0024", "061-7944-796"]
+    },
+    {
+      "nama": "RS Martha Friska Multatuli Medan",
+      "alamat": "Jl. Multatuli No.1, A U R, Kec. Medan Maimun, Kota Medan, 20212",
+      "no_telp": ["(061) 4149666", "0813-6123-6822"]
+    }
+  ]
+}
