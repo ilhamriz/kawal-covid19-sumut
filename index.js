@@ -115,8 +115,8 @@ app.get('/api/statistik', (req, res) => {
 //     });
 // });
 
-const port = 5000;
-app.listen(port, () => console.log(`Server Started on port ${port}`));
-
-// const port = process.env.PORT || 3000;
+// const port = 5000;
 // app.listen(port, () => console.log(`Server Started on port ${port}`));
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Server Started on port ${port}`));
