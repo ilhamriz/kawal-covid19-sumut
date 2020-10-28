@@ -1,3 +1,6 @@
+<button onclick="topFunction()" id="myBtn" title="Go to top">
+    <i class="ri-arrow-up-line"></i>
+</button>
 <footer>
     <div class="footer text-center">
         <div class="col-12">
@@ -33,4 +36,29 @@
             $(this).prev(".navbar-toggler").find(".fa").removeClass("fa-times").addClass("fa-bars");
         });
     });
+
+    // Button Go to Top
+    var mybutton = document.getElementById("myBtn");
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+        var limit = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
+                   document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
+        let maxScrollHeight = limit - window.innerHeight;
+
+        if (document.documentElement.scrollTop == maxScrollHeight) {
+            mybutton.style.transform = 'translateY(-130px)';
+        }
+        else if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.transform = 'translateY(-100px)';
+        } else {
+            mybutton.style.transform = 'translateY(0px)';
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
 </script>

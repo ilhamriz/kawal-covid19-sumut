@@ -270,7 +270,6 @@ a#call-head{text-decoration: none;}
     color: black;
 }
 .wrap-data{
-    /* margin-top: 24px; */
     letter-spacing: .5px;
 }
 .wrap-data > div > div {
@@ -374,12 +373,6 @@ a#call-head{text-decoration: none;}
     }
 }
 @media(max-width:991px){
-    /* .wrap-odp:first-child{
-        margin-bottom: 15px;
-    }
-    .bg-positif, .bg-sembuh{
-        margin-bottom: 15px;
-    } */
     .wrap-data{
         margin-top: 1rem;
     }
@@ -391,6 +384,11 @@ a#call-head{text-decoration: none;}
 @media(max-width:768px){
     .data-odp{
         padding-bottom: 8px;
+    }
+}
+@media(max-width:450px){
+    .wrap-data h4{
+        font-size: 20px;
     }
 }
 
@@ -624,6 +622,9 @@ strong.red{
         margin-bottom: 0;
         margin-top: 32px;
     }
+    .con-risiko button{
+        margin-top: 32px;
+    }
 }
 @media(max-width:768px){
     .card-RS:nth-child(n+2){
@@ -725,6 +726,11 @@ p#khusus{
     }
     .wrap-kontak img{
         width: 80%;
+    }
+}
+@media(max-width:576px){
+    .title-kontak{        
+        padding: 1rem;
     }
 }
 
@@ -946,6 +952,36 @@ p.isi-berita{
     font-size: 1rem;
     background-color: var(--bg-green-1);
 }
+@media(max-width:768px){
+    .footer{
+        font-size: 14px;
+    }
+}
+
+#myBtn {
+    display: block;
+    position: fixed;
+    bottom: -70px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #649274;
+    color: white;
+    cursor: pointer;
+    /* width: 56px; */
+    padding: 10px 19px;
+    border-radius: 100px;
+    font-size: 24px;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+#myBtn:hover {
+    background-color: #4c775b;
+}
+
+
 
 /* SLICK */
 .slick-next, .slick-prev{

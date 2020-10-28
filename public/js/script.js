@@ -27,10 +27,12 @@ async function getDataPasien() {
     const last2 = dataLocal.length - 2;
     const dt_tambah_rawat = dataLocal[last].jumlah_dirawat - dataLocal[last2].jumlah_dirawat;
 
+    let tanda = dt_tambah_rawat > 0 ? "+" : "";
+
     document.getElementById('data-total').innerHTML = numberWithCommas(dt_total);
     document.getElementById('data-total-tambah').innerHTML = '+'+dt_tambah_positif;
     document.getElementById('data-rawat').innerHTML = numberWithCommas(dt_rawat);
-    document.getElementById('data-rawat-tambah').innerHTML = '+'+dt_tambah_rawat;
+    document.getElementById('data-rawat-tambah').innerHTML = tanda+dt_tambah_rawat;
     document.getElementById('data-sembuh').innerHTML = numberWithCommas(dt_sembuh);
     document.getElementById('data-sembuh-tambah').innerHTML = '+'+dt_tambah_sembuh;
     document.getElementById('data-meninggal').innerHTML = numberWithCommas(dt_meninggal);
