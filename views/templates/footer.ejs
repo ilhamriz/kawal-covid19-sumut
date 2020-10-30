@@ -9,56 +9,28 @@
     </div>
 </footer>
 
+<script src="/js/script.js"></script>
 <script>
     // Add active class to the current button (highlight it)
     var header = document.getElementById("ul-nav");
     var btns = header.getElementsByClassName("nav-item");
 
+    // Get number from the server, for actived navbar
     var active = "<%= active %>";
 
     for (var i = 0; i < btns.length; i++) {
-    //   btns[i].addEventListener("click", function() {
-      var current = document.getElementsByClassName("active");
-      current[0].className = current[0].className.replace(" active", "");
-      btns[active].className += " active";
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    btns[active].className += " active";
     }
 
-    $(document).ready(function(){
-        // Add minus icon for collapse element which is open by default
-        // $(".collapse.show").each(function(){
-        // 	$(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");
-        // });
-        
-        // Toggle plus minus icon on show hide of collapse element
+    // Animate for Burger icon
+    $(document).ready(function(){        
+        // Toggle icon on show hide of collapse element
         $(".collapse").on('show.bs.collapse', function(){
             $(this).prev(".navbar-toggler").find(".fa").removeClass("fa-bars").addClass("fa-times");
         }).on('hide.bs.collapse', function(){
             $(this).prev(".navbar-toggler").find(".fa").removeClass("fa-times").addClass("fa-bars");
         });
     });
-
-    // Button Go to Top
-    var mybutton = document.getElementById("myBtn");
-    window.onscroll = function() {scrollFunction()};
-    
-    function scrollFunction() {
-        var limit = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
-                   document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
-        let maxScrollHeight = limit - window.innerHeight;
-
-        if (document.documentElement.scrollTop == maxScrollHeight) {
-            mybutton.style.transform = 'translateY(-130px)';
-        }
-        else if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.transform = 'translateY(-100px)';
-        } else {
-            mybutton.style.transform = 'translateY(0px)';
-        }
-    }
-
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
 </script>

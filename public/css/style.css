@@ -747,7 +747,7 @@ p#khusus{
 }
 .toogle-faq{
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: bold;
     letter-spacing: .5px;
     padding: 16px;
@@ -774,7 +774,7 @@ p#khusus{
 }
 .isi-text-faq{
     margin-top: 16px;
-    font-size: 0.9em;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1.9;
 }
@@ -788,11 +788,11 @@ p#khusus{
     padding-left: 32px;
     margin-top: 8px;
 }
-a#link-faq{
+.isi-text-faq a{
     color: #3498db;
 }
-a#link-faq:hover{
-    color: #3498db;
+.isi-text-faq a:hover{
+    color: #2984c0;
 }
 @media(min-width:576px) and (max-width:768px){
     #head-faq img{

@@ -244,6 +244,102 @@ function limitRS() {
   }
 }
 
+async function getFaq(){
+  try {
+    const getAPI = await fetch("/api/local")
+    const result = await getAPI.json();
+    const data = result.faq;
+    let list_faq = '';
+
+    data.forEach(list => {
+        list_faq += `
+        <div class="col-12 toogle-faq pl-0" data-toggle="collapse" data-target="#text-faq`+list.id+`">
+            <div class="col-1 text-center">`+list.id+`.</div>
+            <div class="col-11 pl-0">
+                <div class="col-12 isi-faq px-0">
+                    <div class="col-lg-12 col-md-11 px-0">
+                        <span>`+list.pertanyaan+`</span>
+                    </div>
+                    <div class="col-1 col-icon-fa">
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div id="text-faq`+list.id+`" class="isi-text-faq collapse" data-parent="#accordion">
+                    `+list.jawaban+`
+                </div>
+            </div>
+        </div>`;
+    });
+
+    document.getElementById('accordion').innerHTML = list_faq;
+
+  } catch (e) {
+      console.log("Error read API faq");
+  }
+}
+
+function searchFAQ() {
+  var input, filter, row, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  row = document.getElementById("accordion");
+  tr = row.getElementsByClassName('toogle-faq');
+
+  for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("span")[0];
+      if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+          } else {
+              tr[i].style.display = "none";
+          }
+      }
+  }
+}
+
+let iconChange = () => {
+  // Animate for arrow icon in FAQ page
+  $(document).ready(function(){
+      // Toggle plus minus icon on show hide of collapse element
+      $(".collapse").on('show.bs.collapse', function(){
+          $(this).prev(".isi-faq").find(".fa").removeClass("fa-chevron-down").addClass("fa-chevron-up");
+      }).on('hide.bs.collapse', function(){
+          $(this).prev(".isi-faq").find(".fa").removeClass("fa-chevron-up").addClass("fa-chevron-down");
+      });
+  });
+}
+
+
+
+
+
+
+// Button Go to Top
+var mybutton = document.getElementById("myBtn");
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    // Find max scroll length
+    var limit = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
+               document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
+    let maxScrollHeight = limit - window.innerHeight;
+
+    if (document.body.scrollTop == maxScrollHeight || document.documentElement.scrollTop == maxScrollHeight) {
+        mybutton.style.transform = 'translateY(-130px)';
+    }
+    else if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+        mybutton.style.transform = 'translateY(-100px)';
+    } else {
+        mybutton.style.transform = 'translateY(0px)';
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
 
 
 
@@ -259,10 +355,7 @@ function limitRS() {
 
 
 
-
-
-// hideSlick();
-// hideSlickThumb();
+// Carousel on index's hero
 function hideSlick(){
     document.getElementById('slick-next').style.display = 'none';
     document.getElementById('slick-prev').style.display = 'none';
@@ -271,38 +364,12 @@ function showSlick(){
     document.getElementById('slick-next').style.display = 'block';
     document.getElementById('slick-prev').style.display = 'block';
 }
-function hideSlickThumb(){            
-    let slick = document.getElementsByClassName('thumbnail-carousel');
-    let tag = slick[0].children;
-    tag[0].style.display = "none";
-    tag[2].style.display = "none";
-}        
-function showSlickThumb(){
-    let slick = document.getElementsByClassName('thumbnail-carousel');
-    let tag = slick[0].children;
-    tag[0].style.display = "block";
-    tag[2].style.display = "block";
-}
 
-baguetteBox.run('#thumb');
 baguetteBox.run('#slick');
 
 $(document).ready(function(){
     $('.fade-carousel').slick({
         autoplay: true,
         autoplaySpeed: 5000
-    });
-});
-
-$(document).ready(function(){
-    $('.thumbnail-carousel').slick({
-        autoplay: true,
-        autoplaySpeed: 4000,
-        infinite: true,
-        lazyLoad: 'ondemand',
-        // slidesToShow: 3,
-        slidesToScroll: 1,
-        variableWidth: true,
-        // adaptiveHeight: true
     });
 });
