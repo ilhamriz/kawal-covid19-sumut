@@ -80,18 +80,6 @@ app.get('/api/statistik', (req, res) => {
 });
 
 
-// let student = { 
-//     name: 'Mike',
-//     age: 23, 
-//     gender: 'Male',
-//     department: 'English',
-//     car: 'Honda' 
-// };
- 
-// let data = JSON.stringify(student, null, 2);
-// fs.writeFileSync('./public/json/student-2.json', data);
-
-
 
 // app.get('/api/:req', (req, res) => {
 //     const q = req.query;

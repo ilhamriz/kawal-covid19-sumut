@@ -93,8 +93,7 @@ button.navbar-toggler{
     font-size: 1.7rem;
 }
 .icon-navbar .fa-times{
-    font-size: 1.9rem;
-    font-weight: 400;
+    font-size: 1.8rem;
 }
 @media(min-width:991px){
     .logo{
@@ -360,12 +359,29 @@ a#call-head{text-decoration: none;}
     padding: 8px 24px;
     border-radius: 7px;
 }
+.btn-data:hover{
+    background-color: #0A6259;
+}
+#btn-show-rs{
+    display: none;
+    text-align: center;
+    margin-top: 24px;
+}
+.btn-data-outline{
+    color: var(--bg-green-1);
+    border: 2px solid var(--bg-green-1);
+    background-color: transparent;
+    transition: .2s ease-in-out;
+    padding: 8px 24px;
+    border-radius: 7px;
+}
+.btn-data-outline:hover{
+    color: white;
+    background-color: var(--bg-green-1);
+}
 .btn-data img{
     max-width: 22px;
     margin-left: 20px;
-}
-.btn-data:hover{
-    background-color: #0A6259;
 }
 @media(min-width:991px) and (max-width:1200px){
     .data-sumut .row div:first-child{

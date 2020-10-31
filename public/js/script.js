@@ -96,7 +96,6 @@ async function getDataCC(){
     const getAPI = await fetch("/api/local")
     const result = await getAPI.json();
     const data = result.call_center;
-    // console.log(data);
     let tbody = "";
     let dropCC = "";
 
@@ -122,12 +121,10 @@ async function getDataCC(){
       tbody += "<tr><td>"+ j +"</td><td>"+ val.nama +"</td><td>"+ cc +"</td><td>"+ web +"</td></tr>";
 
       dropCC += "<p id='myInput"+j+"' class='dropdown-item' onclick='searchCC("+j+")'>"+ val.nama +"</p>";
-      // console.log(index);
     });
 
     document.getElementById('bodyTable').innerHTML = tbody;
     document.getElementById('dropCC').innerHTML = dropCC;
-    // limitCC();
 
   } catch (error) {
     console.log("Error reading Kab Call Center API.")
@@ -215,23 +212,37 @@ async function getDataRS(){
 }
 
 function searchRS(j) {
-  var input, filter, row, card, nama_rs, i, txtValue;
+  let input, filter, row, card, nama_rs, i, btnShow;
   input = document.getElementById("myInput-RS"+j);
   filter = input.textContent;
   row = document.getElementById("row-card-RS");
   card = row.getElementsByClassName('card-RS');
 
+  // Show button 'Lihat Semua'
+  document.getElementById('btn-show-rs').style.display = "block";
+
   for (i = 0; i < card.length; i++) { 
-    let nama_rs = card[i].getElementsByTagName('h5')[0].innerHTML;
+    nama_rs = card[i].getElementsByTagName('h5')[0].innerHTML;
     if (nama_rs) {
-        // txtValue = td.textContent || td.innerText;
         if (nama_rs == filter) {
-            card[i].style.display = "";
+            card[i].style.display = "block";
         } else {
             card[i].style.display = "none";
         }
     }
   }
+}
+
+let showAllRS = () => {
+  // Menampilkan semua card-RS
+  let div = document.getElementById('row-card-RS').querySelectorAll('.card-RS');
+  div.forEach((val) => {
+    val.style.display = "block";
+  });
+
+  // Hide button 'Lihat Semua'
+  document.getElementById('btn-show-rs').style.display = "none";
+
 }
 
 function limitRS() {
@@ -320,19 +331,24 @@ var mybutton = document.getElementById("myBtn");
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-    // Find max scroll length
-    var limit = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
-               document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
-    let maxScrollHeight = limit - window.innerHeight;
+  // Find max scroll length
+  var limit = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
+              document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
+  let maxScrollHeight = limit - window.innerHeight - 200;
 
-    if (document.body.scrollTop == maxScrollHeight || document.documentElement.scrollTop == maxScrollHeight) {
-        mybutton.style.transform = 'translateY(-130px)';
+  if (document.body.scrollTop > maxScrollHeight || document.documentElement.scrollTop > maxScrollHeight) {
+    if (window.innerWidth < 600) {
+      mybutton.style.transform = 'translateY(-180px)';
     }
-    else if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-        mybutton.style.transform = 'translateY(-100px)';
-    } else {
-        mybutton.style.transform = 'translateY(0px)';
+    else {
+      mybutton.style.transform = 'translateY(-130px)';
     }
+  }
+  else if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+    mybutton.style.transform = 'translateY(-100px)';
+  } else {
+      mybutton.style.transform = 'translateY(0px)';
+  }
 }
 
 // When the user clicks on the button, scroll to the top of the document
