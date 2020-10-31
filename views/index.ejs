@@ -348,12 +348,10 @@
     <% include templates/footer.ejs %>
     
     <script>
-      setTimeout(hideSlick, 1000);
+      setTimeout(hideSlick, 2000);
       getDataPasien();
-      getDataCC();
-      getDataRS();
-      setTimeout(limitCC, 1000);
-      setTimeout(limitRS, 1000);
+      getDataCC(limit = true);
+      getDataRS(limit = true);
     </script>
 </body>
 </html>

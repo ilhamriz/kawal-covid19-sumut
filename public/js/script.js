@@ -91,9 +91,9 @@ const changeToStr = (x) => {
   return text;
 }
 
-async function getDataCC(){
+async function getDataCC(limit){
   try {
-    const getAPI = await fetch("/api/local")
+    const getAPI = await fetch("/api/local");
     const result = await getAPI.json();
     const data = result.call_center;
     let tbody = "";
@@ -125,6 +125,8 @@ async function getDataCC(){
 
     document.getElementById('bodyTable').innerHTML = tbody;
     document.getElementById('dropCC').innerHTML = dropCC;
+
+    if (limit) {limitCC()}
 
   } catch (error) {
     console.log("Error reading Kab Call Center API.")
@@ -160,55 +162,47 @@ function searchCC(j) {
   }
 }
 
-async function getDataRS(){
-  const getAPI = await fetch("/api/local");
-  const result = await getAPI.json();
-  const data = result.rs_rujukan;
-  let tbody = "";
-  let dropRS = "";
-
-  data.map((val, index) => {
-    let j = index+1;
-    let no_rs = ``;
-
-    val.no_telp.map((v)=>{
-      no_rs += `<a href='tel:`+ v +`'>
-            <button class='btn mt-3'>`+ v +`</button></a>`;
-    });
-
-    tbody += `<div class='col-lg-4 col-md-6 card-RS'>
-                <div class='col-12'>
-                  <div class='card-line'></div>
-                  <div class='px-0'>
-                    <h5>`+ val.nama +`</h5>
-                    <span>`+ val.alamat +`</span>
+async function getDataRS(limit) {
+  try {
+    const getAPI = await fetch("/api/local");
+    const result = await getAPI.json();
+    const data = result.rs_rujukan;
+    let tbody = "";
+    let dropRS = "";
+  
+    data.map((val, index) => {
+      let j = index+1;
+      let no_rs = ``;
+  
+      val.no_telp.map((v)=>{
+        no_rs += `<a href='tel:`+ v +`'>
+              <button class='btn mt-3'>`+ v +`</button></a>`;
+      });
+  
+      tbody += `<div class='col-lg-4 col-md-6 card-RS'>
+                  <div class='col-12'>
+                    <div class='card-line'></div>
+                    <div class='px-0'>
+                      <h5>`+ val.nama +`</h5>
+                      <span>`+ val.alamat +`</span>
+                    </div>
+                    <div class='px-0'>`+ no_rs +`</div>
                   </div>
-                  <div class='px-0'>`+ no_rs +`</div>
-                </div>
-              </div>`;
+                </div>`;
+  
+      dropRS += "<p id='myInput-RS"+j+"' class='dropdown-item' onclick='searchRS("+j+")'>"+ val.nama +"</p>";
+    });
+  
+    document.getElementById('row-card-RS').innerHTML = tbody;
+    document.getElementById('dropRS').innerHTML = dropRS;
 
-    dropRS += "<p id='myInput-RS"+j+"' class='dropdown-item' onclick='searchRS("+j+")'>"+ val.nama +"</p>";
-  });
-
-  // for (let i = 0; i < data.length; i++) {
-  //     let j = i+1;
-  //     let check = false;
-  //     tbody += "<div class='col-lg-4 card-RS'><div class='col-12'><div class='card-line'></div><div class='px-0'><h5>"+ data[i].nama +"</h5><span>"+ data[i].alamat +"</span></div><div class='px-0'><a href='tel:"+ data[i].no_telp +"'><button class='btn mt-3'>"+ data[i].no_telp +"</button></a></div></div></div>";
-
-  //     for (let k = 0; k < i; k++) {
-  //         if (data[k].kabupaten == data[i].kabupaten) {
-  //             check = true;
-  //             break;
-  //         }
-  //     }
-
-  //     if (check === false ) {
-  //         dropRS += "<p id='myInput-RS"+j+"' class='dropdown-item' onclick='searchRS("+j+")'>"+ data[i].kabupaten +"</p>";   
-  //     }
-  // }
-
-  document.getElementById('row-card-RS').innerHTML = tbody;
-  document.getElementById('dropRS').innerHTML = dropRS;
+    if (limit) {
+      limitRS()
+    }
+    
+  } catch (error) {
+    console.log('Error reading RS API');
+  }
 }
 
 function searchRS(j) {
@@ -283,6 +277,7 @@ async function getFaq(){
     });
 
     document.getElementById('accordion').innerHTML = list_faq;
+    iconChange();
 
   } catch (e) {
       console.log("Error read API faq");
