@@ -362,7 +362,7 @@ a#call-head{text-decoration: none;}
 .btn-data:hover{
     background-color: #0A6259;
 }
-#btn-show-rs{
+#btn-show-rs, #btn-show-cc{
     display: none;
     text-align: center;
     margin-top: 24px;

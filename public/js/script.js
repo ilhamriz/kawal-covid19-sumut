@@ -144,6 +144,9 @@ function limitCC() {
 
 function searchCC(j) {
   var input, filter, table, tr, td, i, txtValue;
+  
+  // Show button 'Lihat Semua'
+  document.getElementById('btn-show-cc').style.display = "block";
 
   input = document.getElementById("myInput"+j);
   filter = input.textContent;
@@ -160,6 +163,17 @@ function searchCC(j) {
         }
     }       
   }
+}
+
+const showAllCC = () => {
+  // Menampilkan semua card-CC
+  let div = document.getElementById('bodyTable').querySelectorAll('tr');
+  div.forEach((val) => {
+    val.style.display = "";
+  });
+
+  // Hide button 'Lihat Semua'
+  document.getElementById('btn-show-cc').style.display = "none";
 }
 
 async function getDataRS(limit) {
@@ -227,7 +241,7 @@ function searchRS(j) {
   }
 }
 
-let showAllRS = () => {
+const showAllRS = () => {
   // Menampilkan semua card-RS
   let div = document.getElementById('row-card-RS').querySelectorAll('.card-RS');
   div.forEach((val) => {
@@ -236,7 +250,6 @@ let showAllRS = () => {
 
   // Hide button 'Lihat Semua'
   document.getElementById('btn-show-rs').style.display = "none";
-
 }
 
 function limitRS() {
