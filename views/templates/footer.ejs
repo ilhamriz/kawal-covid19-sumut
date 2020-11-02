@@ -28,9 +28,9 @@
     $(document).ready(function(){        
         // Toggle icon on show hide of collapse element
         $(".collapse").on('show.bs.collapse', function(){
-            $(this).prev(".navbar-toggler").find(".fa").removeClass("fa-bars").addClass("fa-times");
+            $(this).prev(".navbar-toggler").find(".ri-menu-line").removeClass("ri-menu-line").addClass("ri-close-line");
         }).on('hide.bs.collapse', function(){
-            $(this).prev(".navbar-toggler").find(".fa").removeClass("fa-times").addClass("fa-bars");
+            $(this).prev(".navbar-toggler").find(".ri-close-line").removeClass("ri-close-line").addClass("ri-menu-line");
         });
     });
 </script>

@@ -69,8 +69,15 @@ a.nav-link{
     color: #000000;
     font-weight: 600;
 }
-.navbar-toggler{
+button.navbar-toggler{
     border: none;
+    box-shadow: none;
+    outline: none;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+.icon-navbar{    
+    color: #333333;
 }
 .btn-download{
     font-size: 14px;
@@ -84,16 +91,6 @@ a.nav-link{
 }
 .btn-download:hover{
     background-color: var(--bg-green-1);
-}
-button.navbar-toggler{
-    box-shadow: none;
-    outline: none;
-}
-.icon-navbar .fa{
-    font-size: 1.7rem;
-}
-.icon-navbar .fa-times{
-    font-size: 1.8rem;
 }
 @media(min-width:991px){
     .logo{
@@ -525,11 +522,21 @@ strong.red{
     border-radius: 7px;
     padding-top: 8px;
     padding-bottom: 8px;
-    text-align: left;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .col-search:hover{
     background-color: #e6e6e6;
+}
+.col-search i {
+    font-size: 1.5rem;
+    line-height: 0;
+    font-weight: 700;
+    color: #4a4a4a;
+}
+#list-faq .col-search i {
+    font-size: 1.2rem;
 }
 .col-search span{
     font-size: 14px;
@@ -540,16 +547,11 @@ strong.red{
     padding: 8px 16px;
     background-color: transparent;
     font-size: 15px;
-    width: 80%;
+    width: 100%;
     box-shadow: none;
     outline: none;
 }
-.col-search img{
-    width: 18px;
-    margin: auto 0 auto auto;
-}
 .table-responsive{
-    /* max-height: 200px; */
     overflow-y: hidden;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -779,12 +781,10 @@ p#khusus{
 #list-faq .col-search:hover{
     background-color: #eeeeee;
 }
-#list-faq .col-search img{
-    margin: auto 32px auto auto;
-}
 .toogle-faq:hover{
     background-color: #FAFAFA;
 }
+
 .toogle-faq .col-1{
     max-width: 60px;
 }
@@ -796,9 +796,13 @@ p#khusus{
 }
 .isi-faq{
     display: flex;
+    justify-content: space-between;
 }
-.fa{
-    font-size: 1.2rem;
+.isi-faq>div:nth-child(2){
+    line-height: 30px;
+    font-size: 2rem;
+    padding-right: 0;
+    /* color: #999999; */
 }
 .ol-isi-faq{
     padding-left: 32px;

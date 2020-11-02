@@ -125,12 +125,26 @@ async function getDataCC(limit){
 
     document.getElementById('bodyTable').innerHTML = tbody;
     document.getElementById('dropCC').innerHTML = dropCC;
+    iconSearch();
 
     if (limit) {limitCC()}
 
   } catch (error) {
     console.log("Error reading Kab Call Center API.")
   }
+}
+
+let iconSearch = () => {
+  // Animate for arrow icon in FAQ page
+  $(document).ready(function(){
+    // Toggle plus minus icon on show hide of collapse element
+    $(".dropdown").on('show.bs.dropdown', function () {
+        $("i").removeClass("ri-arrow-down-s-line").addClass("ri-arrow-up-s-line");
+    });
+    $(".dropdown").on('hide.bs.dropdown', function () {
+        $("i").removeClass("ri-arrow-up-s-line").addClass("ri-arrow-down-s-line");
+    });
+});
 }
 
 function limitCC() {
@@ -146,7 +160,10 @@ function searchCC(j) {
   var input, filter, table, tr, td, i, txtValue;
   
   // Show button 'Lihat Semua'
-  document.getElementById('btn-show-cc').style.display = "block";
+  let btnShowCC = document.getElementById('btn-show-cc');
+  if (btnShowCC) {
+    btnShowCC.style.display = "block";
+  }
 
   input = document.getElementById("myInput"+j);
   filter = input.textContent;
@@ -227,7 +244,10 @@ function searchRS(j) {
   card = row.getElementsByClassName('card-RS');
 
   // Show button 'Lihat Semua'
-  document.getElementById('btn-show-rs').style.display = "block";
+  let btnShowRS = document.getElementById('btn-show-rs');
+  if (btnShowRS) {
+    btnShowRS.style.display = "block";
+  }
 
   for (i = 0; i < card.length; i++) { 
     nama_rs = card[i].getElementsByTagName('h5')[0].innerHTML;
@@ -271,15 +291,15 @@ async function getFaq(){
 
     data.forEach(list => {
         list_faq += `
-        <div class="col-12 toogle-faq pl-0" data-toggle="collapse" data-target="#text-faq`+list.id+`">
+        <div class="col-12 toogle-faq" data-toggle="collapse" data-target="#text-faq`+list.id+`">
             <div class="col-1 text-center">`+list.id+`.</div>
-            <div class="col-11 pl-0">
+            <div class="col-11 px-0">
                 <div class="col-12 isi-faq px-0">
-                    <div class="col-lg-12 col-md-11 px-0">
+                    <div class="col-lg-11 col-md-11 px-0">
                         <span>`+list.pertanyaan+`</span>
                     </div>
                     <div class="col-1 col-icon-fa">
-                        <i class="fa fa-chevron-down"></i>
+                      <i class="ri-arrow-down-s-line"></i>
                     </div>
                 </div>
                 <div id="text-faq`+list.id+`" class="isi-text-faq collapse" data-parent="#accordion">
@@ -322,9 +342,9 @@ let iconChange = () => {
   $(document).ready(function(){
       // Toggle plus minus icon on show hide of collapse element
       $(".collapse").on('show.bs.collapse', function(){
-          $(this).prev(".isi-faq").find(".fa").removeClass("fa-chevron-down").addClass("fa-chevron-up");
+          $(this).prev(".isi-faq").find(".ri-arrow-down-s-line").removeClass("ri-arrow-down-s-line").addClass("ri-arrow-up-s-line");
       }).on('hide.bs.collapse', function(){
-          $(this).prev(".isi-faq").find(".fa").removeClass("fa-chevron-up").addClass("fa-chevron-down");
+          $(this).prev(".isi-faq").find(".ri-arrow-up-s-line").removeClass("ri-arrow-up-s-line").addClass("ri-arrow-down-s-line");
       });
   });
 }
