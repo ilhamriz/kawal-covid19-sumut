@@ -65,9 +65,6 @@ app.get('/api', (req, res) => {
         }
 
         res.send(body);
-        // res.setHeader("content-type", "application/json")
-        // res.send(JSON.stringify(body))
-            // const api_temp = JSON.stringify(body, undefined, 4);
     });
 });
 

@@ -291,7 +291,7 @@ async function getFaq(){
 
     data.forEach(list => {
         list_faq += `
-        <div class="col-12 toogle-faq" data-toggle="collapse" data-target="#text-faq`+list.id+`">
+        <div class="col-12 toggle-faq" data-toggle="collapse" data-target="#text-faq`+list.id+`">
             <div class="col-1 text-center">`+list.id+`.</div>
             <div class="col-11 px-0">
                 <div class="col-12 isi-faq px-0">

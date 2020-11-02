@@ -1,55 +1,55 @@
 [
   {
-    "last_date": "2020-10-25",
+    "date": "2020-10-25",
     "jumlah_kasus": 12562,
     "jumlah_sembuh": 10201,
     "jumlah_meninggal": 516,
     "jumlah_dirawat": 1845
   },
   {
-    "last_date": "2020-10-26",
+    "date": "2020-10-26",
     "jumlah_kasus": 12655,
     "jumlah_sembuh": 10286,
     "jumlah_meninggal": 523,
     "jumlah_dirawat": 1846
   },
   {
-    "last_date": "2020-10-27",
+    "date": "2020-10-27",
     "jumlah_kasus": 12745,
     "jumlah_sembuh": 10376,
     "jumlah_meninggal": 524,
     "jumlah_dirawat": 1845
   },
   {
-    "last_date": "2020-10-28",
+    "date": "2020-10-28",
     "jumlah_kasus": 12837,
     "jumlah_sembuh": 10464,
     "jumlah_meninggal": 526,
     "jumlah_dirawat": 1847
   },
   {
-    "last_date": "2020-10-29",
+    "date": "2020-10-29",
     "jumlah_kasus": 12925,
     "jumlah_sembuh": 10546,
     "jumlah_meninggal": 529,
     "jumlah_dirawat": 1850
   },
   {
-    "last_date": "2020-10-30",
+    "date": "2020-10-30",
     "jumlah_kasus": 13014,
     "jumlah_sembuh": 10619,
     "jumlah_meninggal": 530,
     "jumlah_dirawat": 1865
   },
   {
-    "last_date": "2020-10-31",
+    "date": "2020-10-31",
     "jumlah_kasus": 13107,
     "jumlah_sembuh": 10706,
     "jumlah_meninggal": 534,
     "jumlah_dirawat": 1867
   },
   {
-    "last_date": "2020-11-01",
+    "date": "2020-11-01",
     "jumlah_kasus": 13198,
     "jumlah_sembuh": 10778,
     "jumlah_meninggal": 536,

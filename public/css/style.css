@@ -31,9 +31,6 @@ a:hover{
 p{
     margin-bottom: 0;
 }
-.font-angka{
-    font-family: 'Product Sans';
-}
 
 
 
@@ -145,11 +142,6 @@ button.navbar-toggler{
     border-radius: 10px;
     width: 100%;
 }
-/* .col-hub{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-} */
 .col-hub .wrap-call{
     border-radius: 10px;
     padding-bottom: 15px;
@@ -162,7 +154,6 @@ a#call-head{text-decoration: none;}
     display: flex;
 }
 .wrap-call{
-    /* flex-basis: auto; */
     letter-spacing: .5px;
     padding-top: 15px;
     background-color: #FFFFFF;
@@ -174,12 +165,10 @@ a#call-head{text-decoration: none;}
     background-color: #a4c1ae;
 }
 .wrap-call-icon{
-    /* width: 70px; */
     text-align: center;
 }
 .call-icon{
     width: 40px;
-    /* max-height: 50px; */
     margin-left: 15px;
     border-radius: 5px;
     padding: 10px;
@@ -198,11 +187,6 @@ a#call-head{text-decoration: none;}
 }
 .wrap-call p:nth-child(3){
     margin-top: 14px;
-}
-@media(min-width:991px){
-    /* .wrap-call:nth-child(1){
-        margin-right: 24px;
-    } */
 }
 @media(max-width:991px){
     .col-hub{
@@ -228,8 +212,6 @@ a#call-head{text-decoration: none;}
     }
     .call-icon{
         width: 35px;
-        /* height: 35px; */
-        /* max-height: 50px; */
         margin-left: 15px;
         padding: 8px;
     }
@@ -458,7 +440,6 @@ a#zona-risiko:hover{
 .img-question a{
     display: flex;
 }
-/* .img-covid img{width: 55%;} */
 .img-covid img#distancing{
     width: 100%;
 }
@@ -478,7 +459,6 @@ img#question{
     justify-content: space-between;
 }
 .wrap-FAQ, .wrap-table, .wrap-RS{
-    /* margin-top: 32px; */
     padding: 24px;
     border-radius: 10px;
 }
@@ -488,7 +468,7 @@ img#question{
     line-height: 1.7;
 }
 strong.green{
-    color: #38A169;
+    color: #38a169;
 }
 strong.yellow{
     color: #ECC94B;
@@ -508,9 +488,6 @@ strong.red{
     border-radius: 7px;
     letter-spacing: .5px;
     margin-top: auto;
-    /* position: absolute;
-    bottom: 24px; */
-    /* margin-bottom: 24px; */
 }
 .btn-FAQ:hover{
     background-color: #0A6259;
@@ -763,7 +740,7 @@ p#khusus{
 #head-faq p{
     line-height: 1.8;
 }
-.toogle-faq{
+.toggle-faq{
     cursor: pointer;
     font-size: 1.1rem;
     font-weight: bold;
@@ -774,6 +751,7 @@ p#khusus{
     background-color: white;
     display: flex;
     flex-wrap: nowrap;
+    box-shadow: 0 4px 4px rgba(63, 63, 63, 0.1);
 }
 #list-faq .col-search{
     background-color: white;
@@ -781,11 +759,11 @@ p#khusus{
 #list-faq .col-search:hover{
     background-color: #eeeeee;
 }
-.toogle-faq:hover{
+.toggle-faq:hover{
     background-color: #FAFAFA;
 }
 
-.toogle-faq .col-1{
+.toggle-faq .col-1{
     max-width: 60px;
 }
 .isi-text-faq{
@@ -869,35 +847,24 @@ p.isi-berita{
 
 
 /* HALAMAN DATA */
-.min-chart, .big-chart{
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
+#head-data h3{
+    font-size: 22px;
 }
 .min-chart .bg-white{
     border-radius: 10px;
     padding: 15px;
 }
-.min-chart h5, .big-chart h5{
+.min-chart h5{
     font-size: 18px;
     font-weight: bold;
     letter-spacing: .5px;
     margin-bottom: 15px;
 }
-.big-chart{
-    padding: 0;
-    margin-top: 30px;
+.min-chart>div>div{
+    box-shadow: 0 6px 12px rgba(63, 63, 63, 0.1);
 }
-.big-chart .bg-white{
-    border-radius: 10px;
-    padding: 15px;
-}
-#head-data .title-angka h4{
-    font-weight: bold;
-    /* font-size: 18px; */
-}
-#head-data .title-angka p{
-    font-size: 1rem;
+.min-chart>div:nth-child(n+3){
+    margin-top: 24px;
 }
 #title-grafik{
     letter-spacing: .5px;
@@ -907,26 +874,9 @@ p.isi-berita{
     max-height: 500px;
     overflow-y: auto;
 }
-/* #myTable{
-    height: 100px;
-    overflow: auto;
-} */
-@media(max-width:991px){
-}
 @media(max-width:768px){
-    .big-chart{
-        flex-wrap: wrap;
-    }
-    .big-chart .col-lg-6:nth-child(2){
-        margin-top: 16px;
-    }
-}
-@media(max-width:576px){
-    .min-chart, .big-chart{
-        flex-wrap: wrap;
-    }
     .min-chart > div:nth-child(n+1){
-        margin-top: 16px;
+        margin-top: 24px;
     }
 }
 
