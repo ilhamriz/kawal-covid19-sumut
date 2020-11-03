@@ -142,6 +142,13 @@ button.navbar-toggler{
     border-radius: 10px;
     width: 100%;
 }
+.title-hero{
+    color: white;
+}
+.title-hero h4{
+    font-weight: 400;
+    letter-spacing: 1px;
+}
 .col-hub .wrap-call{
     border-radius: 10px;
     padding-bottom: 15px;
@@ -190,7 +197,10 @@ a#call-head{text-decoration: none;}
 }
 @media(max-width:991px){
     .col-hub{
-        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+    .title-hero{
+        margin-bottom: 16px;
     }
     .wrap-call{
         margin-left: 0;
@@ -203,6 +213,12 @@ a#call-head{text-decoration: none;}
     }
 }
 @media(max-width:576px){
+    .title-hero h2{
+        font-size: 1.5rem;
+    }
+    .title-hero h4{
+        font-size: 1.1rem;
+    }
     .col-banner, .col-hub{
         padding-left: 0;
         padding-right: 0;
@@ -220,9 +236,6 @@ a#call-head{text-decoration: none;}
     }
     .wrap-call p:nth-child(even){
         font-size: 11px;
-    }
-    .col-hub{
-        padding: 0 16px;
     }
     .container-call{
         flex-direction: column;
@@ -850,6 +863,9 @@ p.isi-berita{
 #head-data h3{
     font-size: 22px;
 }
+#chart>div{
+    margin-top: 32px;
+}
 .min-chart .bg-white{
     border-radius: 10px;
     padding: 15px;
@@ -858,7 +874,7 @@ p.isi-berita{
     font-size: 18px;
     font-weight: bold;
     letter-spacing: .5px;
-    margin-bottom: 15px;
+    margin-bottom: 24px;
 }
 .min-chart>div>div{
     box-shadow: 0 6px 12px rgba(63, 63, 63, 0.1);
@@ -874,8 +890,30 @@ p.isi-berita{
     max-height: 500px;
     overflow-y: auto;
 }
+.card-sumber{
+    margin-top: 24px;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #DCDDE0;
+}
+.card-sumber a{
+    color: #005FB7;
+}
+.card-sumber a:hover{
+    color: #16659a;
+}
+.card-sumber ul {
+    margin-left: 1rem;
+}
+.card-sumber ul li:first-child{
+    margin-bottom: 5px;
+}
+.card-sumber ul {
+    margin-left: 1rem;
+}
 @media(max-width:768px){
-    .min-chart > div:nth-child(n+1){
+    .min-chart > div:nth-child(n+2){
         margin-top: 24px;
     }
 }

@@ -3,7 +3,7 @@
   <section id="head-data">
     <div class="container">
       <div class="col wrap-data px-0">
-        <h3><strong>Dasboard Kasus Covid-19 di Sumatera Utara</strong></h3>
+        <h2><strong>Dasboard Kasus Covid-19 Sumatera Utara</strong></h2>
         <p>Update Terakhir: <span id="last-update">--</span></p>
         <div class="row mt-3">
 
@@ -41,8 +41,24 @@
     </div>
   </section>
 
+  <section id="sumber">
+    <div class="container">
+      <div class="col card-sumber">
+        <p>Sumber Data :</p>
+        <ul>
+          <li>
+            Data Pasien (Total Terkonfirmasi, Dalam Perawatan, Sembuh, Meninggal) : Data Covid-19 di Indonesia per provinsi (<a href="https://data.covid19.go.id/public/api/prov.json" target="_blank" rel="noopener noreferrer">data.covid19.go.id/public/api/prov.json</a>)
+          </li>
+          <li>
+            Daftar Rumah Sakit Rujukan dan Call Center : Halaman Resmi Pemprov Sumut - Info COVID-19 (<a href="http://covid19.sumutprov.go.id/" target="_blank" rel="noopener noreferrer">covid19.sumutprov.go.id/</a>)
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section id="chart">
-    <div class="container mt-5">
+    <div class="container">
       <div class="col-12 px-0">
         <h6 id="title-grafik">Grafik Total Harian</h6>
         <div class="row min-chart">
@@ -135,18 +151,13 @@
                     }],
                     yAxes: [{
                         ticks: {
-                            beginAtZero: true
+                            beginAtZero: false
                         }
                     }]
                 },
                 legend: {
                     display: false
                 }
-                // title: {
-                //     display: true,
-                //     text: 'Positif Covid-19',
-                //     fontSize: 16
-                // }
             }
         });
 

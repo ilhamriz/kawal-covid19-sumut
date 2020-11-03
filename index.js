@@ -43,7 +43,7 @@ app.get('/api', (req, res) => {
         });
 
         let data_pasien = {
-            last_date: body.last_date,
+            date: body.last_date,
             jumlah_kasus: getSumut[0].jumlah_kasus,
             jumlah_sembuh: getSumut[0].jumlah_sembuh,
             jumlah_meninggal: getSumut[0].jumlah_meninggal,
