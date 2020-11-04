@@ -19,7 +19,7 @@ html{
 body{
     padding-top: 102px;
     background-color: #F5F6FA;
-    font-family: 'Product Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 a{
     color: #000000;
@@ -142,10 +142,8 @@ button.navbar-toggler{
     border-radius: 10px;
     width: 100%;
 }
-.title-hero{
+.title-hero h1{
     color: white;
-}
-.title-hero h4{
     font-weight: 400;
     letter-spacing: 1px;
 }
@@ -160,11 +158,19 @@ a#call-head{text-decoration: none;}
 .container-call{
     display: flex;
 }
+.container-call>div{
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+.container-call>div:first-child{
+    padding-right: 1rem;
+}
 .wrap-call{
     letter-spacing: .5px;
     padding-top: 15px;
     background-color: #FFFFFF;
     transition: .3s ease-out;
+    height: 100%;
 }
 #call-head .wrap-call:hover{
     text-decoration: none;
@@ -195,6 +201,14 @@ a#call-head{text-decoration: none;}
 .wrap-call p:nth-child(3){
     margin-top: 14px;
 }
+@media(min-width:991px) and (max-width:1200px){
+    .container-call{
+        flex-direction: column;
+    }
+    .container-call>div:first-child{
+        padding-right: 0;
+    }
+}
 @media(max-width:991px){
     .col-hub{
         margin-bottom: 32px;
@@ -213,11 +227,8 @@ a#call-head{text-decoration: none;}
     }
 }
 @media(max-width:576px){
-    .title-hero h2{
-        font-size: 1.5rem;
-    }
-    .title-hero h4{
-        font-size: 1.1rem;
+    .title-hero h1{
+        font-size: 2rem;
     }
     .col-banner, .col-hub{
         padding-left: 0;
@@ -242,6 +253,9 @@ a#call-head{text-decoration: none;}
     }
     .container-call > div:nth-child(2){
         padding: 0;
+    }
+    .container-call>div:first-child{
+        padding-right: 0;
     }
 }
 
@@ -758,7 +772,7 @@ p#khusus{
     font-size: 1.1rem;
     font-weight: bold;
     letter-spacing: .5px;
-    padding: 16px;
+    padding: 16px 16px 16px 0;
     margin-bottom: 16px;
     border-radius: 10px;
     background-color: white;
@@ -788,12 +802,13 @@ p#khusus{
 .isi-faq{
     display: flex;
     justify-content: space-between;
+    padding: 0;
 }
-.isi-faq>div:nth-child(2){
+.col-icon-fa{
     line-height: 30px;
     font-size: 2rem;
     padding-right: 0;
-    /* color: #999999; */
+    color: #ababab;
 }
 .ol-isi-faq{
     padding-left: 32px;
@@ -805,6 +820,9 @@ p#khusus{
 .isi-text-faq a:hover{
     color: #2984c0;
 }
+.isi-faq>div:first-child{
+    padding-right: 1rem;
+}
 @media(min-width:576px) and (max-width:768px){
     #head-faq img{
         width: 50%;
@@ -814,8 +832,6 @@ p#khusus{
     .ol-isi-faq{
         padding-left: 16px;
     }
-}
-@media(max-width:360px){
     .col-icon-fa{
         display: none;
     }
@@ -908,9 +924,6 @@ p.isi-berita{
 }
 .card-sumber ul li:first-child{
     margin-bottom: 5px;
-}
-.card-sumber ul {
-    margin-left: 1rem;
 }
 @media(max-width:768px){
     .min-chart > div:nth-child(n+2){

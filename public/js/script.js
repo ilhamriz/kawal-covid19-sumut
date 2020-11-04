@@ -293,18 +293,18 @@ async function getFaq(){
         list_faq += `
         <div class="col-12 toggle-faq" data-toggle="collapse" data-target="#text-faq`+list.id+`">
             <div class="col-1 text-center">`+list.id+`.</div>
-            <div class="col-11 px-0">
-                <div class="col-12 isi-faq px-0">
-                    <div class="col-lg-11 col-md-11 px-0">
-                        <span>`+list.pertanyaan+`</span>
-                    </div>
-                    <div class="col-1 col-icon-fa">
-                      <i class="ri-arrow-down-s-line"></i>
-                    </div>
+            <div class="col-sm-11 px-0">
+              <div class="col-12 isi-faq">
+                <div>
+                    <span>`+list.pertanyaan+`</span>
                 </div>
-                <div id="text-faq`+list.id+`" class="isi-text-faq collapse" data-parent="#accordion">
-                    `+list.jawaban+`
+                <div class="col-icon-fa">
+                  <i class="ri-arrow-down-s-line"></i>
                 </div>
+              </div>
+              <div id="text-faq`+list.id+`" class="isi-text-faq collapse" data-parent="#accordion">
+                  `+list.jawaban+`
+              </div>
             </div>
         </div>`;
     });
@@ -349,6 +349,103 @@ let iconChange = () => {
   });
 }
 
+let getDataChart = () => {
+  let xData = [];
+  let yData = [];
+
+  for(var a=0; a<4; a++){
+      getChart(a);
+  }
+  
+  async function getChart(code){
+    if (code == 0) {
+        var ctx = document.getElementById('chart-konfirmasi');
+    }
+    else if (code == 1) {
+        var ctx = document.getElementById('chart-rawat');
+    }
+    else if (code == 2) {
+        var ctx = document.getElementById('chart-sembuh');
+    }
+    else{
+        var ctx = document.getElementById('chart-meninggal');
+    }
+
+    await getChartValue(code);
+
+    const listLabel = ['Terkonfirmasi', 'Dirawat', 'Sembuh', 'Meninggal'];
+
+    const bgColor = ['rgba(66, 76, 164, .8)', 'rgba(236, 201, 75, .8)', 'rgba(56, 161, 105, .8)', 'rgba(229, 62, 62, .8)'];
+    const borderColor = [];
+
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: xData,
+            datasets: [{
+                label: listLabel[code],
+                data: yData,
+                backgroundColor: bgColor[code],
+                borderColor: 'rgba(24, 78, 61, 1)',
+                borderWidth: 1,
+                fill: true,
+                pointRadius: 6
+            }]
+        },
+        options: {
+            scales: {
+                xAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Tanggal-Bulan'
+                    }
+                }],
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: false
+                    }
+                }]
+            },
+            legend: {
+                display: false
+            }
+        }
+    });
+
+    xData = [];
+    yData = [];
+  }
+
+  async function getChartValue(code) {
+    try{
+      const getAPI = await fetch("/api/statistik")
+      const data = await getAPI.json();
+
+      data.map((val) => {
+        let tanggal = val.date.split("-").reverse();
+        tanggal.pop();
+        xData.push(tanggal.join("-"));
+
+        if (code == 0) {
+          yData.push(parseInt(val.jumlah_kasus));
+        }
+        else if (code == 1) {
+          yData.push(parseInt(val.jumlah_dirawat));
+        }
+        else if (code == 2) {
+          yData.push(parseInt(val.jumlah_sembuh));
+        }
+        else{
+          yData.push(parseInt(val.jumlah_meninggal));
+        }
+      });
+    }
+    catch (e) {
+      console.log("Error get value from Local API")
+    }
+  }
+}
 
 
 
