@@ -322,7 +322,7 @@ function searchFAQ() {
   input = document.getElementById("myInput");
   filter = input.value.toUpperCase();
   row = document.getElementById("accordion");
-  tr = row.getElementsByClassName('toogle-faq');
+  tr = row.getElementsByClassName('toggle-faq');
 
   for (i = 0; i < tr.length; i++) {
       td = tr[i].getElementsByTagName("span")[0];
