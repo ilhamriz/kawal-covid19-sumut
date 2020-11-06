@@ -115,7 +115,7 @@ async function getDataCC(limit){
       if (val.website == null) {
         web += ``;
       } else {
-        web += `<a href='`+ val.website +`' target='_blank'><button class='btn'>Website</button></a>`;
+        web += `<a href='`+ val.website +`' target="_blank" rel="noopener noreferrer"><button class='btn'>Website</button></a>`;
       }
 
       tbody += "<tr><td>"+ j +"</td><td>"+ val.nama +"</td><td>"+ cc +"</td><td>"+ web +"</td></tr>";
@@ -132,19 +132,6 @@ async function getDataCC(limit){
   } catch (error) {
     console.log("Error reading Kab Call Center API.")
   }
-}
-
-let iconSearch = () => {
-  // Animate for arrow icon in FAQ page
-  $(document).ready(function(){
-    // Toggle plus minus icon on show hide of collapse element
-    $(".dropdown").on('show.bs.dropdown', function () {
-        $("i").removeClass("ri-arrow-down-s-line").addClass("ri-arrow-up-s-line");
-    });
-    $(".dropdown").on('hide.bs.dropdown', function () {
-        $("i").removeClass("ri-arrow-up-s-line").addClass("ri-arrow-down-s-line");
-    });
-});
 }
 
 function limitCC() {
@@ -335,6 +322,19 @@ function searchFAQ() {
           }
       }
   }
+}
+
+let iconSearch = () => {
+  // Animate for arrow icon in FAQ page
+  $(document).ready(function(){
+    // Toggle plus minus icon on show hide of collapse element
+    $(".dropdown").on('show.bs.dropdown', function () {
+        $("i").removeClass("ri-arrow-down-s-line").addClass("ri-arrow-up-s-line");
+    });
+    $(".dropdown").on('hide.bs.dropdown', function () {
+        $("i").removeClass("ri-arrow-up-s-line").addClass("ri-arrow-down-s-line");
+    });
+});
 }
 
 let iconChange = () => {

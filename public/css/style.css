@@ -151,8 +151,8 @@ button.navbar-toggler{
     border-radius: 10px;
     padding-bottom: 15px;
 }
-a#call-head{text-decoration: none;}
-#call-head:hover{
+a.call-head{text-decoration: none;}
+.call-head:hover{
     color: #000000;
 }
 .container-call{
@@ -172,7 +172,7 @@ a#call-head{text-decoration: none;}
     transition: .3s ease-out;
     height: 100%;
 }
-#call-head .wrap-call:hover{
+.call-head .wrap-call:hover{
     text-decoration: none;
     color: #000000;
     background-color: #a4c1ae;
@@ -277,6 +277,9 @@ a#call-head{text-decoration: none;}
 .wrap-data{
     letter-spacing: .5px;
 }
+.wrap-data h2{
+    font-size: 24px;
+}
 .wrap-data > div > div {
     margin-bottom: 1rem;
 }
@@ -292,20 +295,17 @@ a#call-head{text-decoration: none;}
 .wrap-data-1 p:nth-child(2){
     font-size: 2rem;
 }
-.wrap-data-1 h6{
-    font-weight: bold;
-}
 .main-card-data{
     background-image: linear-gradient(to right, #2C347D, #424CA5);
     color: white;
 }
-.data-rawat p{
-    color: #CEB546;
+.data-rawat p:not(:first-child){
+    color: #947201;
 }
-.data-sembuh p{
-    color: #27AE60;
+.data-sembuh p:not(:first-child){
+    color: #208844;
 }
-.data-meninggal p{
+.data-meninggal p:not(:first-child){
     color: #A20E0E;
 }
 .data-icon{
@@ -359,7 +359,7 @@ a#call-head{text-decoration: none;}
 }
 .btn-data{
     color: #FFFFFF;
-    background-color: #32A37F;
+    background-color: #048767;
     transition: .3s ease-in;
     border: none;
     padding: 8px 24px;
@@ -409,7 +409,7 @@ a#call-head{text-decoration: none;}
     }
 }
 @media(max-width:450px){
-    .wrap-data h4{
+    .wrap-data h2{
         font-size: 20px;
     }
 }
@@ -439,7 +439,7 @@ a#zona-risiko:hover{
     justify-content: space-between;
 }
 .con-risiko button{
-    background-color: #E53E3E;
+    background-color: #E42B21;
 }
 .con-risiko button:hover{
     background-color: #c42020;
@@ -450,14 +450,20 @@ a#zona-risiko:hover{
     line-height: 1.8;
 }
 .con-apa-covid p{
-    /* margin-top: 16px; */
     letter-spacing: .5px;
     line-height: 1.7;
 }
+.sub-title-apacovid{
+    font-size: 20px;
+}
 .img-covid{
     display: flex;
-    /* align-content: center; */
+    flex-direction: column;
+    justify-content: space-around;
     padding: 0;
+}
+.img-covid img{
+    max-width: 350px;
 }
 .img-question{
     display: flex;
@@ -466,12 +472,6 @@ a#zona-risiko:hover{
 }
 .img-question a{
     display: flex;
-}
-.img-covid img#distancing{
-    width: 100%;
-}
-.img-covid img[alt="Use Mask"]{
-    margin-top: 50%;
 }
 img#question{
     margin: 32px auto auto auto;
@@ -495,20 +495,20 @@ img#question{
     line-height: 1.7;
 }
 strong.green{
-    color: #38a169;
+    color: #2D8659;
 }
 strong.yellow{
-    color: #ECC94B;
+    color: #947201;
 }
 strong.orange{
-    color: #DD6B20;
+    color: #D14905;
 }
 strong.red{
-    color: #E53E3E;
+    color: #e31717;
 }
 .btn-FAQ{
     color: #FFFFFF;
-    background-color: #32A37F;
+    background-color: #048767;
     transition: .3s ease-in;
     border: none;
     padding: 8px 24px;
@@ -544,7 +544,7 @@ strong.red{
 }
 .col-search span{
     font-size: 14px;
-    color: #999999;
+    color: #4E4E4E;
 }
 .col-search input{
     border: none;
@@ -1014,7 +1014,7 @@ p.isi-berita{
     box-shadow: 0px 0px 15px rgb(160, 160, 160);
 }
 .slick-next:before, .slick-prev:before{
-    font-family: 'Advent Pro';
+    font-family: 'Advent Pro', sans-serif;
     font-size: 2.5rem;
     color: #000000;
 }
