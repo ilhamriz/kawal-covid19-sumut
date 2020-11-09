@@ -1,9 +1,7 @@
 const express = require('express');
 const request = require('request');
 const engine = require('ejs-locals');
-const path = require('path');
 const app = express();
-const http = require('http');
 const fs = require('fs');
 const compression = require('compression');
 
