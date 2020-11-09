@@ -76,19 +76,6 @@ button.navbar-toggler{
 .icon-navbar{    
     color: #333333;
 }
-.btn-download{
-    font-size: 14px;
-    border: none;
-    border-radius: 7px;
-    color: #FFFFFF;
-    letter-spacing: .5px;
-    padding: .5rem 1rem;
-    background-color: var(--bg-green-2);
-    transition: .3s ease-in;
-}
-.btn-download:hover{
-    background-color: var(--bg-green-1);
-}
 @media(min-width:991px){
     .logo{
         font-size: 20px;
@@ -102,7 +89,6 @@ button.navbar-toggler{
         padding-left: 15px;
     }
     a.nav-link{
-        /* background-color: hotpink; */
         width: 100%;
         padding: 10px 0;
     }
@@ -125,14 +111,6 @@ button.navbar-toggler{
     background-position: center;
     padding-top: 24px;
     padding-bottom: 32px;
-}
-.title-head{
-    margin-bottom: 40px;
-    color: #FFFFFF;
-}
-.title-head p{
-    font-size: 30px;
-    letter-spacing: .5px;
 }
 .wrap-banner{
     width: 100%;
@@ -234,9 +212,6 @@ a.call-head{text-decoration: none;}
         padding-left: 0;
         padding-right: 0;
     }
-    .title-head p{
-        font-size: 20px;
-    }
     .call-icon{
         width: 35px;
         margin-left: 15px;
@@ -267,12 +242,6 @@ a.call-head{text-decoration: none;}
 }
 #data .container{
     padding: 0;
-}
-.title-angka{
-    color: white;
-}
-#head-data .title-angka{
-    color: black;
 }
 .wrap-data{
     letter-spacing: .5px;
@@ -308,55 +277,6 @@ a.call-head{text-decoration: none;}
 .data-meninggal p:not(:first-child){
     color: #A20E0E;
 }
-.data-icon{
-    width: 35px;
-    padding: 8px;
-    border-radius: 5px;
-}
-.data-icon img{
-    width: 100%;
-}
-.sub-title-data{
-    font-size: .9rem;
-    padding-left: 10px;
-    display: flex;
-    align-items: center;
-}
-.data-sumut{
-    font-weight: bold;
-}
-.data-sumut .row div:first-child{
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-}
-.data-sumut p{
-    font-size: 36px;
-}
-.data-angka{
-    text-align: end;
-}
-.wrap-odp{
-    border-radius: 7px;
-    padding: 8px;
-    letter-spacing: .5px;
-    color: #383D45;
-}
-.title-odp{
-    font-size: 18px;
-    font-weight: bold;
-}
-.data-odp{
-    margin: 0 auto;
-    padding-right: 0;
-}
-.data-odp p:first-child{
-    margin-top: 10px;
-    font-size: 36px;
-    font-weight: bold;
-    line-height: 35px;
-    color: #32A37F;
-}
 .btn-data{
     color: #FFFFFF;
     background-color: #048767;
@@ -389,11 +309,6 @@ a.call-head{text-decoration: none;}
     max-width: 22px;
     margin-left: 20px;
 }
-@media(min-width:991px) and (max-width:1200px){
-    .data-sumut .row div:first-child{
-        font-size: 18px;
-    }
-}
 @media(max-width:991px){
     .wrap-data{
         margin-top: 1rem;
@@ -401,11 +316,6 @@ a.call-head{text-decoration: none;}
     .btn-data{
         padding-top: 12px;
         padding-bottom: 12px;
-    }
-}
-@media(max-width:768px){
-    .data-odp{
-        padding-bottom: 8px;
     }
 }
 @media(max-width:450px){
@@ -479,6 +389,9 @@ img#question{
 }
 .wrap-RS{margin-top: 24px;}
 .col-FAQ{margin-top: 10px;}
+.col-FAQ h3, .wrap-RS h3{
+    font-size: 24px;
+}
 .wrap-FAQ{
     height: 100%;
     display: flex;
@@ -608,7 +521,7 @@ strong.red{
     top: 0;
     left: 0;
 }
-.card-RS h5{
+.card-RS h4{
     font-size: 18px;
     margin-bottom: 0;
     font-weight: bold;
@@ -655,7 +568,6 @@ strong.red{
     table.table{
         min-width: 700px;
     }    
-    .wrap-FAQ h5{font-size: 22px;}
 }
 
 
@@ -666,7 +578,6 @@ strong.red{
 .list-lindungi li{
     display: flex;
     flex-wrap: nowrap;
-    /* padding: 0; */
     margin-bottom: 10px;
     margin-top: 1rem;
     list-style: none;
@@ -675,37 +586,6 @@ strong.red{
     height: 24px;
     margin-right: 10px;
 }
-
-
-
-
-/* thumbnail */
-#thumbInfo{
-    margin-top: 80px;
-}
-.thumbnail-carousel a{
-    margin-right: 8px;
-    margin-left: 8px;
-}
-.thumbnail-carousel img{
-    border-radius: 10px;
-    width: 250px;
-    /* max-height: 355px; */
-}
-@media(max-width:768px){
-    .thumbnail-carousel img{
-        width: 200px;
-    }
-}
-@media(max-width:576px){  
-    #thumbInfo .col-banner{
-        margin: 0 15px;
-    }
-    .thumbnail-carousel img{
-        width: 150px;
-    }
-}
-
 
 
 
@@ -724,10 +604,6 @@ strong.red{
     padding: 2rem;
     font-size: 18px;
     letter-spacing: .5px;
-}
-p#khusus{
-    font-size: 14px;
-    color: var(--bg-red);
 }
 @media(min-width:991px){
     #daftar-RS .card-RS:nth-child(n+4){
@@ -839,46 +715,8 @@ p#khusus{
 
 
 
-/* BERITA-HOME */
-#berita-h{margin-top: 80px;}
-.wrap-berita-h{
-    border-radius: 10px;
-    padding: 24px;
-}
-.wrap-berita-h h3, .wrap-berita-h h4{
-    font-weight: bold;
-}
-.list-berita-h{
-    padding: 32px 16px;
-    border-bottom: 1px solid #dddddd;
-}
-/* .list-berita-h h4{
-    color: var(--bg-green-4);
-} */
-.list-berita-h:last-child{
-    border-bottom: none;
-}
-p.isi-berita{
-    margin-top: 32px;
-}
-.list-berita-h a, .list-berita a{
-    color: #7EBF60;
-}
-.list-berita-h a:hover, .list-berita a:hover{
-    color: var(--bg-green-2);
-}
-.img-berita-h img{border-radius: 10px;}
-@media(max-width:991px){
-    .img-berita-h{display: none;}
-}
-
-
-
 
 /* HALAMAN DATA */
-#head-data h3{
-    font-size: 22px;
-}
 #chart>div{
     margin-top: 32px;
 }
@@ -901,10 +739,6 @@ p.isi-berita{
 #title-grafik{
     letter-spacing: .5px;
     margin-bottom: 15px;
-}
-#tabel-kota .table-responsive{
-    max-height: 500px;
-    overflow-y: auto;
 }
 .card-sumber{
     margin-top: 24px;
@@ -930,28 +764,6 @@ p.isi-berita{
         margin-top: 24px;
     }
 }
-
-
-
-
-/* HALAMAN BERITA */
-#berita .wrap-berita-h{
-    border-radius: 10px;
-    padding: 24px;
-    margin-bottom: 18px;
-}
-.judul-berita{
-    padding: 0 0 15px 24px;
-}
-.judul-berita h3{
-    font-weight: bold;
-}
-
-
-
-
-
-
 
 
 
@@ -990,7 +802,6 @@ p.isi-berita{
     background-color: #649274;
     color: white;
     cursor: pointer;
-    /* width: 56px; */
     padding: 10px 19px;
     border-radius: 100px;
     font-size: 24px;

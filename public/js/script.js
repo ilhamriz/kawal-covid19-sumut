@@ -201,7 +201,7 @@ async function getDataRS(limit) {
                   <div class='col-12'>
                     <div class='card-line'></div>
                     <div class='px-0'>
-                      <h5>`+ val.nama +`</h5>
+                      <h4>`+ val.nama +`</h4>
                       <span>`+ val.alamat +`</span>
                     </div>
                     <div class='px-0'>`+ no_rs +`</div>
@@ -237,7 +237,7 @@ function searchRS(j) {
   }
 
   for (i = 0; i < card.length; i++) { 
-    nama_rs = card[i].getElementsByTagName('h5')[0].innerHTML;
+    nama_rs = card[i].getElementsByTagName('h4')[0].innerHTML;
     if (nama_rs) {
         if (nama_rs == filter) {
             card[i].style.display = "block";
