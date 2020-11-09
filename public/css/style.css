@@ -588,8 +588,6 @@ strong.red{
 }
 
 
-
-
 /* KONTAK */
 .wrap-kontak, .wrap-faq{
     padding: 24px;
@@ -631,9 +629,6 @@ strong.red{
         padding: 1rem;
     }
 }
-
-
-
 
 
 /* FAQ */
@@ -714,8 +709,6 @@ strong.red{
 }
 
 
-
-
 /* HALAMAN DATA */
 #chart>div{
     margin-top: 32px;
@@ -765,17 +758,7 @@ strong.red{
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
+/* FOOTER */
 .footer{
     margin-top: 100px;
     padding: 2rem;
