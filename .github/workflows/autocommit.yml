@@ -22,6 +22,11 @@ jobs:
         run: |
           d=`date '+%Y-%m-%dT%H:%M:%SZ'`
           echo $d > LAST_UPDATED
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - run: npm install
+      - run: node index.js
       - name: Commit changes
         run: |
           git config --local user.email "milhamrizky7@gmail.com"
