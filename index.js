@@ -4,6 +4,7 @@ const engine = require('ejs-locals');
 const app = express();
 const fs = require('fs');
 const compression = require('compression');
+const { log } = require('console');
 
 app.use(compression());
 
@@ -60,7 +61,6 @@ app.get('/api', (req, res) => {
             pushdata.push(data_pasien);
             fs.writeFileSync('./public/json/saveData.json', JSON.stringify(pushdata, null, 2));
         }
-
         res.send(body);
     });
 });
@@ -73,7 +73,39 @@ app.get('/api/statistik', (req, res) => {
     res.send(require('./public/json/saveData.json'));
 });
 
+const runAPI = () => {
+    request({
+        url: "http://data.covid19.go.id/public/api/prov.json",
+        json: true
+    }, (err, reponse, body) => {
+        let getSumut = body.list_data.filter((val) => {
+            return val.key == "SUMATERA UTARA";
+        });
 
+        let rawdata = fs.readFileSync('./public/json/saveData.json');
+        let pushdata = JSON.parse(rawdata);
+        let last = pushdata.length - 1;
+        let data_last = pushdata[last];
+        
+        if (getSumut[0].jumlah_kasus != data_last.jumlah_kasus ||
+            getSumut[0].jumlah_sembuh != data_last.jumlah_sembuh ||
+            getSumut[0].jumlah_meninggal != data_last.jumlah_meninggal ||
+            getSumut[0].jumlah_dirawat != data_last.jumlah_dirawat) {
+            
+            let data_pasien = {
+                date: body.last_date,
+                jumlah_kasus: getSumut[0].jumlah_kasus,
+                jumlah_sembuh: getSumut[0].jumlah_sembuh,
+                jumlah_meninggal: getSumut[0].jumlah_meninggal,
+                jumlah_dirawat: getSumut[0].jumlah_dirawat
+            };
+            
+            pushdata.push(data_pasien);
+            fs.writeFileSync('./public/json/saveData.json', JSON.stringify(pushdata, null, 2));
+        }
+    });
+}
+runAPI();
 
 // app.get('/api/:req', (req, res) => {
 //     const q = req.query;
@@ -98,4 +130,8 @@ app.get('/api/statistik', (req, res) => {
 // });
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Server Started on port ${port}`));
+const server = app.listen(port, () => console.log(`Server Started on port ${port}`));
+
+setTimeout(() => {
+    process.exit();
+}, 1000);

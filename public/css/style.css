@@ -11,10 +11,6 @@ html{
     --bg-green-2: #32A37F;
     --bg-green-3: #649274;
     --bg-green-4: #BEDD9A;
-    --bg-yellow: #FECE63;
-    --bg-yellow-hover: #E5BA59;
-    --bg-red: #FD6F63;
-    --bg-red-hover: #E36459;
 }
 body{
     padding-top: 102px;
@@ -385,7 +381,6 @@ a#zona-risiko:hover{
 }
 img#question{
     margin: 32px auto auto auto;
-    width: 70%;
 }
 .wrap-RS{margin-top: 24px;}
 .col-FAQ{margin-top: 10px;}
