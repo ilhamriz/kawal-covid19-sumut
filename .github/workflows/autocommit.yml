@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: '12'
       - run: npm install
-      - run: node index.js
+      - run: npm run start
       - name: Commit changes
         run: |
           git config --local user.email "milhamrizky7@gmail.com"
