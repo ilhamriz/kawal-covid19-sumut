@@ -24,6 +24,8 @@ jobs:
           echo $d > LAST_UPDATED
       - name: Commit changes
         run: |
+          git config --local user.email "milhamrizky7@gmail.com"
+          git config --local user.name "ilhamriz"
           git add -A
           git commit -m "auto commit"
       - name: Push Back
