@@ -70,17 +70,24 @@
     "jumlah_dirawat": 1891
   },
   {
-    "date": "2020-11-23",
+    "date": "2020-11-09",
     "jumlah_kasus": 13743,
     "jumlah_sembuh": 11239,
     "jumlah_meninggal": 564,
     "jumlah_dirawat": 1940
   },
   {
-    "date": "2020-11-23",
+    "date": "2020-11-10",
     "jumlah_kasus": 13818,
     "jumlah_sembuh": 11303,
     "jumlah_meninggal": 566,
     "jumlah_dirawat": 1949
+  },
+  {
+    "date": "2020-11-11",
+    "jumlah_kasus": 13972,
+    "jumlah_sembuh": 11444,
+    "jumlah_meninggal": 570,
+    "jumlah_dirawat": 1958
   }
 ]
