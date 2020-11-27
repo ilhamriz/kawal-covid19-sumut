@@ -131,5 +131,12 @@
     "jumlah_sembuh": 11938,
     "jumlah_meninggal": 588,
     "jumlah_dirawat": 2379
+  },
+  {
+    "date": "2020-11-26",
+    "jumlah_kasus": 15235,
+    "jumlah_sembuh": 12415,
+    "jumlah_meninggal": 601,
+    "jumlah_dirawat": 2219
   }
 ]
