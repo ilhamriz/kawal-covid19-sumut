@@ -369,5 +369,12 @@
     "jumlah_sembuh": 16632,
     "jumlah_meninggal": 707,
     "jumlah_dirawat": 2058
+  },
+  {
+    "date": "2021-01-15",
+    "jumlah_kasus": 19495,
+    "jumlah_sembuh": 16715,
+    "jumlah_meninggal": 707,
+    "jumlah_dirawat": 2073
   }
 ]
