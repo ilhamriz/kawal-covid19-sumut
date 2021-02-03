@@ -456,6 +456,14 @@ var mybutton = document.getElementById("myBtn");
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
+  if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+    mybutton.style.transform = 'translateY(-100px)';
+  } else {
+      mybutton.style.transform = 'translateY(0px)';
+  }
+}
+
+function scrollFunction() {
   // Find max scroll length
   var limit = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
               document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
