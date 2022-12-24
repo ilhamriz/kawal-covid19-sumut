@@ -106,5 +106,7 @@ app.get('/api/statistik', (req, res) => {
     res.send(require('./public/json/saveData.json'));
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 app.listen(port, () => console.log(`Server Started on port ${port}`));
+
+module.exports = app
