@@ -432,5 +432,12 @@
     "jumlah_sembuh": 23714,
     "jumlah_meninggal": 903,
     "jumlah_dirawat": 2503
+  },
+  {
+    "date": "2022-09-30",
+    "jumlah_kasus": 127325,
+    "jumlah_sembuh": 124366,
+    "jumlah_meninggal": 2613,
+    "jumlah_dirawat": 346
   }
 ]

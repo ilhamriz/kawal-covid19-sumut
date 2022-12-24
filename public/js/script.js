@@ -49,31 +49,31 @@ function numberWithCommas(x) {
 
 const changeToStr = (x) => {
   switch (x) {
-    case "1":
+    case "01":
       text = "Jan";
       break;
-    case "2":
+    case "02":
       text = "Feb";
       break;
-    case "3":
+    case "03":
       text = "Mar";
       break;
-    case "4":
+    case "04":
       text = "Apr";
       break;
-    case "5":
+    case "05":
       text = "Mei";
       break;
-    case "6":
+    case "06":
       text = "Jun";
       break;
-    case "7":
+    case "07":
       text = "Jul";
       break;
-    case "8":
+    case "08":
       text = "Agu";
       break;
-    case "9":
+    case "09":
       text = "Sep";
       break;
     case "10":
