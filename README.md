@@ -3,4 +3,4 @@
 My Portfolio as FrontEnd Developer
 
 Click below for the live demo :
-[Live Demo](https://kawal-covid19-sumut.herokuapp.com/)
+[Live Demo](https://bit.ly/ilham-kawalcovid)
